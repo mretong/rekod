@@ -18,3 +18,38 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+|#######################################|
+|				Warta                  #|
+|#######################################|
+*/
+Route::resource('warta','WartaController');
+
+/*
+|#######################################|
+|				Perbicaraan            #|
+|#######################################|
+*/
+Route::resource('bicara','WartaController');
+
+/*
+|#######################################|
+|				Borang H               #|
+|#######################################|
+*/
+Route::resource('borangh','WartaController');
+
+/*
+|#######################################|
+|				Borang K               #|
+|#######################################|
+*/
+Route::resource('borangk','WartaController');
+
+/*
+|#######################################|
+|				Settings               #|
+|#######################################|
+*/
+Route::resource('setting','WartaController');
