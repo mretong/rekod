@@ -44,10 +44,8 @@
           <li class="nav-item active">
             <a class="nav-link" href="setting">Tetapan Sistem <span class="sr-only"></span></a>
           </li>
-        </ul>
-        
+        </ul>        
       </div>
-
     </nav>
     @yield('content')
 

@@ -14,4 +14,13 @@ class WartaController extends Controller
 
     	return view('warta.index',compact('warta'));
     }
+
+    public function create()
+    {
+    	$blok = Blok::pluck('nama', 'id');
+
+        // dd($jabatan);
+
+    	return view('warta.create', compact('blok'));
+    }
 }

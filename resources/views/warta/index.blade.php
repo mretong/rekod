@@ -7,7 +7,7 @@
 
 <hr />
 
-[ <a href="{{ route('warta.index') }}">Tambah Warta Baru</a> ] 
+[ <a href="{{ route('warta.create') }}">Tambah Warta Baru</a> ] 
 
 <hr />
 
