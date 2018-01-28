@@ -7,18 +7,18 @@
 
 <hr />
 
-[ <a href="{{ route('warta.index') }}">Warta Menu</a> ] 
+[ <a href="{{ route('warta.index') }}">Tambah Warta Baru</a> ] 
 
 <hr />
 
 <table class="table table-bordered table-striped">
 	<tr>
-		<td>Bil</td>
-		<td>Blok</td>
-		<td>No. Warta</td>
-		<td>Tarikh Warta</td>
-		<td>Tarikh Luput Warta</td>
-		<td>Pilihan</td>
+		<td><center>Bil</td>
+		<td><center>Blok</td>
+		<td><center>No. Warta</td>
+		<td><center>Tarikh Warta</td>
+		<td><center>Tarikh Luput Warta</td>
+		<td><center>Pilihan</td>
 	</tr>
 <!--
 	@foreach($warta as $news)
