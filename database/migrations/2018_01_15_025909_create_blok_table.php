@@ -15,9 +15,11 @@ class CreateBlokTable extends Migration
     {
         Schema::create('blok', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_blok');
+            $table->string('nama');
             $table->integer('id_mukim');
+            $table->foreign('id_mukim')->reference('id')->on('mukim')->onDelete('cascade');
             $table->integer('id_lokaliti');
+            $table->foreign('id_lokaliti')->reference('id')->on('lokaliti')->onDelete('cascade');
             $table->integer('jum_lot_total');
             $table->float('anggaran_kos');
             $table->integer('status_batal');
