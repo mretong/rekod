@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1>Listing Peserta</h1>
+<h1>Listing Warta</h1>
 
 <hr />
 
@@ -20,7 +20,7 @@
 		<td>Tarikh Luput Warta</td>
 		<td>Pilihan</td>
 	</tr>
-
+<!--
 	@foreach($warta as $news)
 	<tr>
 		<td>{{ $loop->iteration }}</td>
@@ -38,6 +38,7 @@
 			
 	</tr>
 	@endforeach
+-->
 </table>
 
 @endsection
