@@ -17,10 +17,15 @@ class WartaController extends Controller
 
     public function create()
     {
-    	$blok = Blok::pluck('nama', 'id');
+    	//$blok = Blok::pluck('nama', 'id');
 
-        // dd($blok);
+         //dd('here');
 
-    	return view('warta.create', compact('blok'));
+    	return view('warta.create');
+    }
+
+    public function edit()
+    {
+        dd('hehehe');
     }
 }
