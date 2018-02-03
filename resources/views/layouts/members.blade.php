@@ -33,7 +33,7 @@
             <a class="nav-link" href="{{ route('warta.index') }}">Warta <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="bicara">Perbicaraan <span class="sr-only"></span></a>
+            <a class="nav-link" href="{{route('bicara.index')}}">Perbicaraan <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="borangh">Borang H <span class="sr-only"></span></a>

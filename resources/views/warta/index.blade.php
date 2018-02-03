@@ -23,15 +23,15 @@
 
 	@foreach($warta as $news)
 	<tr>
-		<td>{{ $loop->iteration }}</td>
-		<td>{{ $news->id_blok }}</td>
-		<td>{{ $news->no_warta }}</td>
-		<td>{{ $news->tarikh_warta }}</td>
-		<td>{{ $news->tarikh_luput }}</td>
+		<td><center>{{ $loop->iteration }}</td>
+		<td><center>{{ $news->id_blok }}</td>
+		<td><center>{{ $news->no_warta }}</td>
+		<td><center>{{ $news->tarikh_warta }}</td>
+		<td><center>{{ $news->tarikh_luput }}</td>
 		
 		<td>
 				{!! Form::open(['route' => ['warta.destroy', $news->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Delete', ['class' => 'btn btn-primary']) !!}				
+					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}	||			
 				{!! Form::close() !!}{!! Form::open(['route' => ['warta.show', $news->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
