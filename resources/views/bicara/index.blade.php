@@ -1,6 +1,5 @@
 @extends('layouts.members')
 
-
 @section('content')
 
 <h1>Perbicaraan Menu</h1>
