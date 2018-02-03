@@ -19,7 +19,7 @@ class WartaController extends Controller
     {
     	$blok = Blok::pluck('nama', 'id');
 
-        // dd($jabatan);
+        // dd($blok);
 
     	return view('warta.create', compact('blok'));
     }

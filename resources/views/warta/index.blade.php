@@ -3,7 +3,7 @@
 
 @section('content')
 
-<h1>Listing Warta</h1>
+<h1>Warta Menu</h1>
 
 <hr />
 
@@ -20,14 +20,14 @@
 		<td><center>Tarikh Luput Warta</td>
 		<td><center>Pilihan</td>
 	</tr>
-<!--
+
 	@foreach($warta as $news)
 	<tr>
 		<td>{{ $loop->iteration }}</td>
-		<td>{{ $news->blok->id_blok }}</td>
-		<td>{{ $news->id }}</td>
-		<td>{{ $news->t_warta }}</td>
-		<td>{{ $news->t_luputwarta }}</td>
+		<td>{{ $news->id_blok }}</td>
+		<td>{{ $news->no_warta }}</td>
+		<td>{{ $news->tarikh_warta }}</td>
+		<td>{{ $news->tarikh_luput }}</td>
 		
 		<td>
 				{!! Form::open(['route' => ['warta.destroy', $news->id], 'method' => 'delete']) !!}
@@ -38,7 +38,7 @@
 			
 	</tr>
 	@endforeach
--->
+
 </table>
 
 @endsection

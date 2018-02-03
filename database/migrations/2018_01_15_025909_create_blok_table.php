@@ -18,16 +18,8 @@ class CreateBlokTable extends Migration
             $table->string('nama');
 
             $table->integer('id_mukim');
-            $table->foreign('id_mukim')
-                    ->references('id')
-                    ->on('mukim')
-                    ->onDelete('cascade');
 
             $table->integer('id_lokaliti');
-            $table->foreign('id_lokaliti')
-                    ->references('id')
-                    ->on('lokaliti')
-                    ->onDelete('cascade');
 
             $table->integer('jum_lot_total');
             $table->float('anggaran_kos');

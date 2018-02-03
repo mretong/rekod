@@ -47,7 +47,10 @@
         </ul>        
       </div>
     </nav>
-    @yield('content')
+    @show
+    <div class="container">
+            @yield('content')
+        </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
