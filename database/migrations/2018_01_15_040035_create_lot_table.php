@@ -15,8 +15,8 @@ class CreateLotTable extends Migration
     {
         Schema::create('lot', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_lot');
-            $table->integer('pakej');
+            $table->string('nama');
+            $table->integer('id_pakej');
             $table->integer('status_tanah');
         });
     }

@@ -13,25 +13,23 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Blok</td>
-		<td><center>No. Warta</td>
-		<td><center>Tarikh Warta</td>
-		<td><center>Tarikh Luput Warta</td>
+		<td><center>Lot</td>
+		<td><center>Nama Pentadbir</td>
+		<td><center>Status</td>
 		<td><center>Pilihan</td>
 	</tr>
 
-	@foreach($warta as $news)
+	@foreach($bicara as $hears)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $news->id_blok }}</td>
-		<td><center>{{ $news->no_warta }}</td>
-		<td><center>{{ $news->tarikh_warta }}</td>
-		<td><center>{{ $news->tarikh_luput }}</td>
+		<td><center>{{ $hears->id_lot }}</td>
+		<td><center>{{ $hears->nama_pentadbir }}</td>
+		<td><center>{{ $hears->status }}</td>
 		
 		<td>
-				{!! Form::open(['route' => ['warta.destroy', $news->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['bicara.destroy', $hears->id], 'method' => 'delete']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}	||			
-				{!! Form::close() !!}{!! Form::open(['route' => ['warta.show', $news->id], 'method' => 'get']) !!}
+				{!! Form::close() !!}{!! Form::open(['route' => ['bicara.show', $hears->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
 			
