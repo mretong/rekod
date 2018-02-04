@@ -10,7 +10,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('blok', $blok, 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('blok', $blok, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
