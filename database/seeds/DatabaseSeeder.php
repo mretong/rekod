@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(LokalitiTableSeeder::class);
         $this->call(NegeriTableSeeder::class);
         $this->call(DaerahTableSeeder::class);
+        $this->call(PakejTableSeeder::class);
+        $this->call(FasaTableSeeder::class);
         //$this->call(MukimTableSeeder::class);
     }
 }

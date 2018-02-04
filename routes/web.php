@@ -31,25 +31,25 @@ Route::resource('warta','WartaController');
 |				Perbicaraan            #|
 |#######################################|
 */
-Route::resource('bicara','WartaController');
+Route::resource('bicara','PerbicaraanController');
 
 /*
 |#######################################|
 |				Borang H               #|
 |#######################################|
 */
-Route::resource('borangh','WartaController');
+Route::resource('borangh','BorangHController');
 
 /*
 |#######################################|
 |				Borang K               #|
 |#######################################|
 */
-Route::resource('borangk','WartaController');
+Route::resource('borangk','BorangKController');
 
 /*
 |#######################################|
 |				Settings               #|
 |#######################################|
 */
-Route::resource('setting','WartaController');
+Route::resource('setting','SettingController');
