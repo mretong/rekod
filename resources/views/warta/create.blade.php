@@ -3,6 +3,7 @@
 @section('content')
 
 <h1>Add Warta</h1>
+<hr />
 
 
 {!! Form::open(['route' => 'warta.store']) !!}
@@ -59,4 +60,5 @@
 
 {!! Form::close() !!}
 
+<hr />
 @endsection
