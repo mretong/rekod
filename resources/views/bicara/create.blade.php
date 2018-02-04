@@ -9,23 +9,13 @@
 {!! Form::open(['route' => 'bicara.store']) !!}
 
 	<div class="form-group row">
-		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('blok', $blok, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('lot', 'Lot',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('fasa', 'Fasa', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('fasa', $fasa, null, ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('pakej', 'Pakej', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('pakej',$pakej, null, ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('tarikh_warta', 'Tarikh Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::date('tarikh_warta', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('tarikh_1', 'Tarikh Bicara', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::date('tarikh_1', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
