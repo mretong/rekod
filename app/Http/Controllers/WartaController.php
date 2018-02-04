@@ -48,4 +48,41 @@ class WartaController extends Controller
         // dd('hehehe');
 
     }
+
+    public function destroy($id)
+    {
+        $warta = Warta::find($id);
+        $warta->delete();
+
+        return redirect()->route('warta.index');
+    }
+
+    public function show($id)
+    {
+        $news = Warta::findOrFail($id);
+        $blok = Blok::pluck('nama', 'id');
+        $fasa = Fasa::pluck('nama','id');
+        $pakej = Pakej::pluck('nama','id');
+
+        return view('warta.show', compact('news', 'blok', 'fasa', 'pakej'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $warta = Warta::find($id);
+
+        $warta->id_blok         =   $request->get('blok');
+        $warta->fasa            =   $request->get('fasa');
+        $warta->pakej           =   $request->get('pakej');
+        $warta->tarikh_warta    =   $request->get('tarikh_warta');
+        $warta->tarikh_luput    =   $request->get('tarikh_luput');
+        $warta->jilid_warta     =   $request->get('jilid');
+        $warta->no_warta        =   $request->get('no_warta');
+        $warta->rujukan         =   $request->get('rujukan');
+        $warta->catatan         =   $request->get('catatan');
+
+        $warta->save();
+
+        return redirect()->route('warta.index');
+    }
 }
