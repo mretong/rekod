@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Add Warta</h1>
+<h1>Add Perbicaraan</h1>
 <hr />
 
 

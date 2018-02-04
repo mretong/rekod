@@ -8,6 +8,11 @@ class Lot extends Model
 {
     protected $table = 'lot';
     protected $primaryKey = 'id';
-    protected $fillable = ['id_lot','pakej','status_tanah'];
+    protected $fillable = ['nama','pakej','status_tanah'];
     public $timestamp = false;
+
+    public function perbicaraan()
+    {
+    	return $this->belongTo('App\Perbicaraan');
+    }
 }
