@@ -36,13 +36,13 @@
             <a class="nav-link" href="{{route('bicara.index')}}">Perbicaraan <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="borangh">Borang H <span class="sr-only"></span></a>
+            <a class="nav-link" href="{{route('borangh.index')}}">Borang H <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="borangk">Borang K <span class="sr-only"></span></a>
+            <a class="nav-link" href="{{route('borangk.index')}}">Borang K <span class="sr-only"></span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="setting">Tetapan Sistem <span class="sr-only"></span></a>
+            <a class="nav-link" href="{{route('setting.index')}}">Tetapan Sistem <span class="sr-only"></span></a>
           </li>
         </ul>        
       </div>
