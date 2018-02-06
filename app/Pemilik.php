@@ -9,5 +9,5 @@ class Pemilik extends Model
     protected $table = 'pemilik';
     protected $primaryKey = 'id';
     protected $fillable = ['id_lot','id_pembayaran','nama','no_kp','kategori_pampasan','id_pembayaran'];
-    public $timestamp = false;
+    public $timestamps = false;
 }

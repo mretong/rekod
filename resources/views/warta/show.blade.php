@@ -6,15 +6,11 @@
 
 <hr />
 
-[ <a href="{{ route('warta.create') }}">Add Peserta</a> ] 
-
-<hr />
-
 {!! Form::model($news, ['route' => ['warta.update', $news->id], 'method' => 'PATCH']) !!}
 
 <div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('blok', $blok, 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('blok', $blok, $blok, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -39,29 +35,30 @@
 
 	<div class="form-group row">
 		{!! Form::label('jilid', 'Jilid Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jilid','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('jilid', null ,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('no_warta', 'Nombor Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('no_warta','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('no_warta', null ,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('rujukan', 'Rujukan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('rujukan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan',null ,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('catatan', 'Catatan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('catatan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('catatan', null ,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 <div class="form-group">
 	{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
+	[ <a href="{{ route('warta.index') }}">Kembali</a> ] 
 </div>
 
 
 {!! Form::close() !!}
-
+<hr />
 @endsection

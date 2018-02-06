@@ -15,8 +15,6 @@ class CreateMukimTable extends Migration
     {
         Schema::create('mukim', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('id_blok');
-                    
             $table->string('nama');
             $table->string('no_geran');
         });

@@ -9,7 +9,7 @@ class Lot extends Model
     protected $table = 'lot';
     protected $primaryKey = 'id';
     protected $fillable = ['nama','pakej','status_tanah'];
-    public $timestamp = false;
+    public $timestamps = false;
 
     public function perbicaraan()
     {

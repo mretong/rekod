@@ -16,11 +16,6 @@ class CreateBlokTable extends Migration
         Schema::create('blok', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-
-            $table->integer('id_mukim');
-
-            $table->integer('id_lokaliti');
-
             $table->integer('jum_lot_total');
             $table->float('anggaran_kos');
             $table->integer('status_batal');

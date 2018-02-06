@@ -9,5 +9,5 @@ class Wilayah extends Model
     protected $table = 'wilayah';
     protected $primaryKey = 'id';
     protected $fillable = ['nama','kod'];
-    public $timestamp = false;
+    public $timestamps = false;
 }
