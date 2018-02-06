@@ -109,3 +109,10 @@ Route::resource('bank','BankController');
 |#######################################|
 */
 Route::resource('blok','BlokController');
+
+/*
+|#######################################|
+|				Mukim                  #|
+|#######################################|
+*/
+Route::resource('mukim','MukimController');

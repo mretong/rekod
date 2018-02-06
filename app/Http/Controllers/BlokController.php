@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blok;
+use App\Mukim;
+use App\Lokaliti;
 
 class BlokController extends Controller
 {
@@ -16,7 +18,9 @@ class BlokController extends Controller
 
     public function create()
     {
-    	return view('blok.create');
+        $lokaliti = Lokaliti::pluck('nama','id');
+        dd($lokaliti);
+    	return view('blok.create',compact('lokaliti'));
     }
 
     public function store(Request $request)

@@ -7,6 +7,7 @@ use App\Warta;
 use App\Blok;
 use App\Fasa;
 use App\Pakej;
+use App\Mukim;
 
 class WartaController extends Controller
 {
@@ -19,13 +20,14 @@ class WartaController extends Controller
 
     public function create()
     {
-    	$blok = Blok::pluck('nama', 'id');
-        $fasa = Fasa::pluck('nama','id');
+    	$blok  = Blok::pluck('nama', 'id');
+        $fasa  = Fasa::pluck('nama','id');
         $pakej = Pakej::pluck('nama','id');
+        $mukim = Mukim::pluck('nama','id');
 
          //dd('here');
 
-    	return view('warta.create',compact(['blok','fasa','pakej']));
+    	return view('warta.create',compact(['blok','fasa','pakej','mukim']));
     }
 
     public function store(Request $request)
