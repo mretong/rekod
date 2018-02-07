@@ -12,13 +12,14 @@ class PerbicaraanController extends Controller
     public function index()
     {
     	$bicara = Perbicaraan::all();
+        $staf = Staff::all();
     	// dd('here');
-    	return view ('bicara.index',compact('bicara'));
+    	return view ('bicara.index',compact('bicara','staf'));
     }
 
     public function create()
     {
-    	$staf 	= 	Staff::pluck('nama','id');
+    	$staf 	= 	Staff::pluck('nama','no_pekerja');
     	$lot 	=	Lot::pluck('nama','id');
     	//dd($staf);
     	return view('bicara.create',compact('staf', 'lot'));
@@ -34,7 +35,7 @@ class PerbicaraanController extends Controller
     	$bicara->tarikh_4			=	$request->get('tarikh_4');
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
     	$bicara->id_lot				=	$request->get('id_lot');
-    	$bicara->nama_pentadbir		=	$request->get('nama');
+    	$bicara->no_pekerja    		=	$request->get('no_pekerja');
     	$bicara->status				=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');
     	$bicara->pampasan			=	$request->get('pampasan');
@@ -58,8 +59,9 @@ class PerbicaraanController extends Controller
     public function show($id)
     {
     	$bicara = Perbicaraan::findOrFail($id);
+        $staf   = Staff::pluck('nama','no_pekerja'); 
 
-    	return view('bicara.show',compact('bicara'));
+    	return view('bicara.show',compact('bicara','staf'));
     }
 
     public function update($id, Request $request)

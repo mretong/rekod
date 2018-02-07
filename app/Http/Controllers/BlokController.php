@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Blok;
-use App\Mukim;
-use App\Lokaliti;
+use App\Fasa;
 
 class BlokController extends Controller
 {
@@ -18,9 +17,10 @@ class BlokController extends Controller
 
     public function create()
     {
-        $lokaliti = Lokaliti::pluck('nama','id');
-        dd($lokaliti);
-    	return view('blok.create',compact('lokaliti'));
+        // $blok = Blok::find(1);
+        // $blok->roles()->attach($id);
+        $fasa = Fasa::pluck('nama','kod');
+        return view('blok.create',compact('fasa'));
     }
 
     public function store(Request $request)
@@ -28,8 +28,6 @@ class BlokController extends Controller
     	$blok = new Blok;
 
     	$blok->nama 			= $request->get('nama');
-    	$blok->id_mukim			= $request->get('mukim');
-    	$blok->id_lokaliti		= $request->get('lokaliti');
     	$blok->jum_lot_total	= $request->get('total');
     	$blok->anggaran_kos		= $request->get('kos');
     	$blok->status_batal		= $request->get('status');
@@ -38,7 +36,8 @@ class BlokController extends Controller
     	$blok->rujukan_jps		= $request->get('jps');
     	$blok->jajaran			= $request->get('jajaran');
 
-    	$blok->save();
+    	// $blok->roles()->save();
+        $blok->save();
 
     	return redirect()->route('blok.index');
     }
@@ -62,8 +61,6 @@ class BlokController extends Controller
         $blok = Blok::find($id);
 
         $blok->nama 			= $request->get('nama');
-    	$blok->id_mukim			= $request->get('mukim');
-    	$blok->id_lokaliti		= $request->get('lokaliti');
     	$blok->jum_lot_total	= $request->get('total');
     	$blok->anggaran_kos		= $request->get('kos');
     	$blok->status_batal		= $request->get('status');

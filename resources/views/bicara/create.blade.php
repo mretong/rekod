@@ -10,7 +10,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('lot', 'Lot',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -19,23 +19,28 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('tarikh_luput', 'Tarikh Luput Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::date('tarikh_luput', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('nama', 'Nama Pentadbir',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('no_pekerja', $staf, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('jilid', 'Jilid Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jilid','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('status', 'Status Perbicaraan',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('status', ['1'=>'Sedang Bicara','2'=>'Batal','3'=>'Selesai','4'=>'Tunda'], null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('no_warta', 'Nombor Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('no_warta','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('bilangan', 'Bilangan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('bilangan','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('rujukan', 'Rujukan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('rujukan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('pampasan', 'Pampasan RM:', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('pampasan','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('kosLain', 'Lain-lain Kos RM:', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('kos_lain','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -43,9 +48,14 @@
 		{!! Form::text('catatan','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
+	<div class="form-group row">
+		{!! Form::label('jajaran', 'Jajaran', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('jajaran','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Warta', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah Perbicaraan', ['class' => 'btn btn-primary']) !!}
 	</div>
 
 {!! Form::close() !!}

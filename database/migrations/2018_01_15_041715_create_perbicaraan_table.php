@@ -21,7 +21,7 @@ class CreatePerbicaraanTable extends Migration
             $table->date('tarikh_4');
             $table->date('tarikh_5');
             $table->integer('id_lot');
-            $table->string('nama_pentadbir');
+            $table->string('no_pekerja');
             $table->integer('status');
             $table->string('bilangan');
             $table->float('pampasan',8,2);

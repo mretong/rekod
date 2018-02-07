@@ -13,6 +13,6 @@ class Lokaliti extends Model
 
     public function blok()
     {
-    	return $this->belongToMany('App\Blok');
+    	return $this->belongToMany('App\Blok','blok_lokaliti','id_blok','id_lokaliti');
     }
 }

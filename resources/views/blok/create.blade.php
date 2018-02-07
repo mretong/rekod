@@ -14,16 +14,6 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('mukim', 'Mukim',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('mukim', 'test', 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('lokaliti', 'Lokaliti',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('lokaliti', 'test', 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
 		{!! Form::label('total', 'Jumlah Lot Total', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('total','',['class'=>'form-control col-sm-6']) !!}
 	</div>
@@ -35,12 +25,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('status', 'Status Batal',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('status', 'test', 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('status', ['1'=>'Batal Pengambilan','2'=>'Pengambilan Baru'] , 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('fasa', 'Fasa Pengambilan',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('fasa', 'test', 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('fasa', $fasa, 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -60,7 +50,7 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Negeri', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah Blok', ['class' => 'btn btn-primary']) !!}
 		[<a href="{{ route('blok.index') }}">Kembali</a>]
 	</div>
 

@@ -10,4 +10,9 @@ class Staff extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['no_pekerja','nama'];
     public $timestamps = false;
+
+    public function bicara()
+    {
+    	return $this->hasMany('App\Perbicaraan');
+    }
 }

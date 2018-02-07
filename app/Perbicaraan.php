@@ -8,7 +8,7 @@ class Perbicaraan extends Model
 {
     protected $table = 'perbicaraan';
     protected $primaryKey = 'id';
-    protected $fillable = ['tarikh_1','tarikh_2','tarikh_3','tarikh_4','tarikh_5','id_lot','nama_pentadbir','status','bilangan','pampasan','kos_lain','catatan','jajaran'];
+    protected $fillable = ['tarikh_1','tarikh_2','tarikh_3','tarikh_4','tarikh_5','id_lot','no_pekerja','status','bilangan','pampasan','kos_lain','catatan','jajaran'];
     public $timestamps = false;
 
     public function warta()
@@ -19,5 +19,10 @@ class Perbicaraan extends Model
     public function lot()
     {
     	return $this->belongsTo('App\Lot');
+    }
+
+    public function staff()
+    {
+        return $this->belongsTo('App\Staff');
     }
 }
