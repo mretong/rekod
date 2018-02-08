@@ -116,3 +116,24 @@ Route::resource('blok','BlokController');
 |#######################################|
 */
 Route::resource('mukim','MukimController');
+
+/*
+|#######################################|
+|				Wilayah                #|
+|#######################################|
+*/
+Route::resource('wilayah','WilayahController');
+
+/*
+|#######################################|
+|				Lot                    #|
+|#######################################|
+*/
+Route::resource('lot','LotController');
+
+/*
+|#######################################|
+|			status_tanah               #|
+|#######################################|
+*/
+Route::resource('tanah','StatusTanahController');

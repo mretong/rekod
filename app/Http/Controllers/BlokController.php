@@ -31,7 +31,7 @@ class BlokController extends Controller
     	$blok->jum_lot_total	= $request->get('total');
     	$blok->anggaran_kos		= $request->get('kos');
     	$blok->status_batal		= $request->get('status');
-    	$blok->fasa_pengambilan	= $request->get('fasa');
+    	$blok->id_fasa	        = $request->get('fasa');
     	$blok->rujukan_jkptg	= $request->get('jkptg');
     	$blok->rujukan_jps		= $request->get('jps');
     	$blok->jajaran			= $request->get('jajaran');

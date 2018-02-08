@@ -29,4 +29,29 @@ class StaffController extends Controller
     	return redirect()->route('staff.index');
     }
 
+    public function destroy($id)
+    {
+        $staff = Staff::find($id);
+        $staff->delete();
+
+        return redirect()->route('staff.index');
+    }
+
+    public function show($id)
+    {
+        $pic = Staff::findOrFail($id);
+        return view('staff.show',compact('pic'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $staff = Staff::find($id);
+
+        $staff->no_pekerja = $request->get('no_pekerja');
+        $staff->nama = $request->get('nama');
+
+        $staff->save();
+        return redirect()->route('staff.index');
+    }
+
 }

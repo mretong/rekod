@@ -19,7 +19,7 @@ class CreateBlokTable extends Migration
             $table->float('jum_lot_total',8,2);
             $table->float('anggaran_kos',10,2);
             $table->integer('status_batal');
-            $table->integer('fasa_pengambilan');
+            $table->integer('id_fasa');
             $table->string('rujukan_jkptg');
             $table->string('rujukan_jps');
             $table->string('jajaran');
