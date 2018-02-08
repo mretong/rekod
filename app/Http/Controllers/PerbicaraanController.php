@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use App\Perbicaraan;
 use App\Staff;
 use App\Lot;
+use App\StatusBicara;
 
 class PerbicaraanController extends Controller
 {
     public function index()
     {
     	$bicara = Perbicaraan::all();
-        $staf = Staff::all();
+        $staf   = Staff::all();
     	// dd('here');
     	return view ('bicara.index',compact('bicara','staf'));
     }
@@ -21,8 +22,9 @@ class PerbicaraanController extends Controller
     {
     	$staf 	= 	Staff::pluck('nama','no_pekerja');
     	$lot 	=	Lot::pluck('nama','id');
+        $sb     =   StatusBicara::pluck('nama','id');
     	//dd($staf);
-    	return view('bicara.create',compact('staf', 'lot'));
+    	return view('bicara.create',compact('staf', 'lot','sb'));
     }
 
     public function store(Request $request)

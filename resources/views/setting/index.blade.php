@@ -15,6 +15,7 @@
 || <a href="{{ route('blok.index') }}">Tambah Maklumat Blok</a>&nbsp&nbsp&nbsp&nbsp	||<br>
 || <a href="{{ route('staff.index') }}">Tambah Maklumat Staff</a>&nbsp&nbsp&nbsp&nbsp	||<br>
 || <a href="{{ route('wilayah.index') }}">Tambah Maklumat Wilayah</a>||<br>
+|| <a href="{{ route('status_bicara.index') }}">Tambah Status Bicara</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('tanah.index') }}">Tambah Status Tanah</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('bank.index') }}">Tambah Maklumat Bank</a>&nbsp&nbsp&nbsp&nbsp	||
 

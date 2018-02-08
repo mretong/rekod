@@ -25,7 +25,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('status', 'Status Perbicaraan',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('status', ['1'=>'Sedang Bicara','2'=>'Batal','3'=>'Selesai','4'=>'Tunda'], null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('status', $sb, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

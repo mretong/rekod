@@ -137,3 +137,10 @@ Route::resource('lot','LotController');
 |#######################################|
 */
 Route::resource('tanah','StatusTanahController');
+
+/*
+|#######################################|
+|			status_bicara              #|
+|#######################################|
+*/
+Route::resource('status_bicara','StatusBicaraController');
