@@ -3,32 +3,32 @@
 
 @section('content')
 
-<h1>Menu Blok Pengairan</h1>
+<h1>Menu Kaedah Bayaran</h1>
 
 <hr />
 
-[ <a href="{{ route('blok.create') }}">Tambah Maklumat Blok Pengairan Baru</a> ] 
+[ <a href="{{ route('kaedah_pembayaran.create') }}">Tambah Maklumat Kaedah Bayaran Baru</a> ] 
 
 <hr />
 
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Blok</td>
-		<td><center>Fasa Pengambilan</td>
+		<td><center>Kaedah</td>
+		<td><center>Kod Kaedah</td>
 		<td><center>Pilihan</td>
 	</tr>
 
-	@foreach($blok as $tersier)
+	@foreach($bayar as $pay)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $tersier->nama }}</td>
-		<td><center>{{ $tersier->id_fasa }}</td>
+		<td><center>{{ $pay->nama }}</td>
+		<td><center>{{ $pay->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['blok.destroy', $tersier->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['kaedah_pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
-				{!! Form::open(['route' => ['blok.show', $tersier->id], 'method' => 'get']) !!}
+				{!! Form::open(['route' => ['kaedah_pembayaran.show', $pay->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
 	</tr>
 	@endforeach

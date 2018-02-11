@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Tambah Negeri</h1>
+<h1>Tambah Maklumat Pemilik</h1>
 <hr />
 
 
@@ -14,10 +14,19 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('kod', 'Kod Negeri', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('kod','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('nama', 'Nama Pemilik', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('nama','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
+	<div class="form-group row">
+		{!! Form::label('no_kp', 'No. Kad Pengenalan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('no_kp','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('kategori', 'Kategori Pampasan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('kategori', $kategori, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
 
 	<div class="form-group">
 		{!! Form::submit('Tambah Negeri', ['class' => 'btn btn-primary']) !!}

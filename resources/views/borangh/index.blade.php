@@ -6,7 +6,7 @@
 <hr />
 
 [ <a href="{{ route('borangh.create') }}">Tambah BorangH Baru</a> ]
-[ <a href="{{ route('borangh.create') }}">Tambah Maklumat Pembayaran Baru</a> ]
+[ <a href="{{ route('pembayaran.index') }}">Tambah Maklumat Pembayaran Baru</a> ]
 
 <hr />
 
@@ -14,7 +14,6 @@
 	<tr>
 		<td><center>Bil</td>
 		<td><center>Lot</td>
-		<td><center>Kategori</td>
 		<td><center>No.KP</td>
 		<td><center>Nama</td>
 		<td><center>Pilihan</td>
@@ -24,7 +23,6 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $form->id_lot }}</td>
-		<td><center>{{ $form->kategori_pampasan }}</td>
 		<td><center>{{ $form->no_kp }}</td>
 		<td><center>{{ $form->nama }}</td>
 		

@@ -8,6 +8,7 @@ use App\Blok;
 use App\Fasa;
 use App\Pakej;
 use App\Lot;
+use App\KategoriPampasan;
 
 class BorangHController extends Controller
 {
@@ -24,13 +25,19 @@ class BorangHController extends Controller
     	$fasa 	=	Fasa::pluck('nama','id');
     	$pakej 	=	Pakej::pluck('nama','id');
     	$lot 	=	Lot::pluck('nama','id');
+        $kategori = KategoriPampasan::pluck('nama','id');
     	//dd($blok);
 
-    	return view('borangh.create',compact('blok','fasa','pakej','lot'));
+    	return view('borangh.create',compact('blok','fasa','pakej','lot','kategori'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $borangh = new Pemilik;
 
+        $borangh->id_lot        = $request->get('lot');
+        $borangh->nama          = $request->get('nama');
+        $borangh->no_kp         = $request->get('no_kp');
+        $borangh->kategori      = $request->get('kategori');
     }
 }

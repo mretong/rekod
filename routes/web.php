@@ -158,3 +158,31 @@ Route::resource('status_bicara','StatusBicaraController');
 |#######################################|
 */
 Route::resource('status_aduan','StatusAduanController');
+
+/*
+|#######################################|
+|			kategori_pampasan          #|
+|#######################################|
+*/
+Route::resource('kategori','KategoriPampasanController');
+
+/*
+|#######################################|
+|			pembayaran                 #|
+|#######################################|
+*/
+Route::resource('pembayaran','PembayaranController');
+
+/*
+|#######################################|
+|			pembayaran                 #|
+|#######################################|
+*/
+Route::resource('status_pembayaran','StatusPembayaranController');
+
+/*
+|#######################################|
+|			kaedah_bayar               #|
+|#######################################|
+*/
+Route::resource('kaedah_pembayaran','KaedahPembayaranController');

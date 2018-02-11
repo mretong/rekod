@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePemilikTable extends Migration
+class CreateStatusPembayaranTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreatePemilikTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemilik', function (Blueprint $table) {
+        Schema::create('status_pembayaran', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_lot');
             $table->string('nama');
-            $table->string('no_kp');
-            $table->integer('kategori_pampasan');
-            $table->integer('id_pembayaran');
+            $table->string('kod');
         });
     }
 
@@ -30,6 +27,6 @@ class CreatePemilikTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('status_pembayaran');
     }
 }
