@@ -5,7 +5,8 @@
 
 <hr />
 
-[ <a href="{{ route('borangh.create') }}">Tambah BorangH Baru</a> ] 
+[ <a href="{{ route('borangh.create') }}">Tambah BorangH Baru</a> ]
+[ <a href="{{ route('borangh.create') }}">Tambah Maklumat Pembayaran Baru</a> ]
 
 <hr />
 

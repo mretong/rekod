@@ -49,6 +49,13 @@ Route::resource('borangk','BorangKController');
 
 /*
 |#######################################|
+|				Aduan                  #|
+|#######################################|
+*/
+Route::resource('aduan','AduanController');
+
+/*
+|#######################################|
 |				Settings               #|
 |#######################################|
 */
@@ -144,3 +151,10 @@ Route::resource('tanah','StatusTanahController');
 |#######################################|
 */
 Route::resource('status_bicara','StatusBicaraController');
+
+/*
+|#######################################|
+|			status_aduan               #|
+|#######################################|
+*/
+Route::resource('status_aduan','StatusAduanController');
