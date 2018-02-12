@@ -7,6 +7,7 @@ use App\Perbicaraan;
 use App\Staff;
 use App\Lot;
 use App\StatusBicara;
+use App\Blok;
 
 class PerbicaraanController extends Controller
 {
@@ -23,8 +24,9 @@ class PerbicaraanController extends Controller
     	$staf 	= 	Staff::pluck('nama','no_pekerja');
     	$lot 	=	Lot::pluck('nama','id');
         $sb     =   StatusBicara::pluck('nama','id');
+        $blok   =   Blok::pluck('nama','id');
     	//dd($staf);
-    	return view('bicara.create',compact('staf', 'lot','sb'));
+    	return view('bicara.create',compact('staf', 'lot','sb','blok'));
     }
 
     public function store(Request $request)
@@ -37,6 +39,7 @@ class PerbicaraanController extends Controller
     	$bicara->tarikh_4			=	$request->get('tarikh_4');
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
     	$bicara->id_lot				=	$request->get('id_lot');
+        $bicara->id_blok            =   $request->get('id_blok');
     	$bicara->no_pekerja    		=	$request->get('no_pekerja');
     	$bicara->status				=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');

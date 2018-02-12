@@ -186,3 +186,10 @@ Route::resource('status_pembayaran','StatusPembayaranController');
 |#######################################|
 */
 Route::resource('kaedah_pembayaran','KaedahPembayaranController');
+
+/*
+|#######################################|
+|			     ptj                   #|
+|#######################################|
+*/
+Route::resource('ptj','PtjController');

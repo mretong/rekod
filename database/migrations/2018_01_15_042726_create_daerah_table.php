@@ -17,6 +17,7 @@ class CreateDaerahTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('kod');
+            $table->integer('id_negeri');
         });
     }
 

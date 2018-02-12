@@ -18,6 +18,11 @@
 		{!! Form::text('no_pekerja', null, ['class' => 'form-control col-sm-6']) !!}
 	</div>
 
+	<div class="form-group row">
+		{!! Form::label('ptj', 'PTJ', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('ptj',$ptj, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
 	<div class="form-group">
 		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
 		[ <a href="{{ route('staff.index') }}">Kembali</a> ] 

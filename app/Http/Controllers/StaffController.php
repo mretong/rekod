@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Staff;
+use App\Ptj;
 
 class StaffController extends Controller
 {
@@ -15,7 +16,8 @@ class StaffController extends Controller
 
     public function create()
     {
-    	return view('staff.create');
+        $ptj = Ptj::pluck('nama','kod');
+    	return view('staff.create',compact('ptj'));
     }
 
     public function store(Request $request)
@@ -24,6 +26,7 @@ class StaffController extends Controller
 
     	$staff->no_pekerja 	= $request->get('no_pekerja');
     	$staff->nama 		= $request->get('nama');
+        $staff->ptj         = $request->get('ptj');
 
     	$staff->save();
     	return redirect()->route('staff.index');
@@ -40,15 +43,17 @@ class StaffController extends Controller
     public function show($id)
     {
         $pic = Staff::findOrFail($id);
-        return view('staff.show',compact('pic'));
+        $ptj = Ptj::pluck('nama','id');
+        return view('staff.show',compact('pic','ptj'));
     }
 
     public function update($id, Request $request)
     {
         $staff = Staff::find($id);
 
-        $staff->no_pekerja = $request->get('no_pekerja');
-        $staff->nama = $request->get('nama');
+        $staff->no_pekerja  = $request->get('no_pekerja');
+        $staff->nama        = $request->get('nama');
+        $staff->ptj         = $request->get('ptj');
 
         $staff->save();
         return redirect()->route('staff.index');

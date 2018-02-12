@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKaedahPembayaranTable extends Migration
+class CreateBorangKTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateKaedahPembayaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('kaedah_bayar', function (Blueprint $table) {
+        Schema::create('borang_k', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama');
-            $table->string('kod');
+            $table->integer('id_blok');
+            $table->integer('id_lot');
+            $table->date('tarikh_k');
+            $table->string('rujukan_k');
+            $table->string('rujukan_fail');
+            $table->string('attachment');
         });
     }
 
@@ -27,6 +31,6 @@ class CreateKaedahPembayaranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kaedah_pembayaran');
+        Schema::dropIfExists('borang_k');
     }
 }

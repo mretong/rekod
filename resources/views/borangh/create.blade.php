@@ -29,7 +29,7 @@
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Negeri', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah', ['class' => 'btn btn-primary']) !!}
 		[<a href="{{ route('borangh.index') }}">Kembali</a>]
 	</div>
 

@@ -19,7 +19,6 @@ class CreatePemilikTable extends Migration
             $table->string('nama');
             $table->string('no_kp');
             $table->integer('kategori_pampasan');
-            $table->integer('id_pembayaran');
         });
     }
 

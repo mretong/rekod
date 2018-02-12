@@ -35,9 +35,41 @@ class BorangHController extends Controller
     {
         $borangh = new Pemilik;
 
+        $borangh->id_lot                    = $request->get('lot');
+        $borangh->nama                      = $request->get('nama');
+        $borangh->no_kp                     = $request->get('no_kp');
+        $borangh->kategori_pampasan         = $request->get('kategori');
+
+        $borangh->save();
+
+        return redirect()->route('borangh.index');
+    }
+
+    public function destroy($id)
+    {
+        $borangh = Pemilik::find($id);
+        $borangh->delete();
+
+        return redirect()->route('borangh.index');
+    }
+
+    public function show($id)
+    {
+        $form = Pemilik::findOrFail($id);
+        return view('borangh.show',compact('form'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $borangh = Pemilik::find($id);
+
         $borangh->id_lot        = $request->get('lot');
         $borangh->nama          = $request->get('nama');
         $borangh->no_kp         = $request->get('no_kp');
         $borangh->kategori      = $request->get('kategori');
+
+        $borangh->save();
+
+        return redirect()->route('borangh.index');
     }
 }

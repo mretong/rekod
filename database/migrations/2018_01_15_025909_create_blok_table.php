@@ -16,13 +16,13 @@ class CreateBlokTable extends Migration
         Schema::create('blok', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
+            $table->integer('id_fasa');
+            $table->integer('id_lokaliti');
             $table->float('jum_lot_total',8,2);
             $table->float('anggaran_kos',10,2);
-            $table->integer('status_batal');
-            $table->integer('id_fasa');
+            $table->integer('status_batal');            
             $table->string('rujukan_jkptg');
             $table->string('rujukan_jps');
-            $table->string('jajaran');
         });
     }
 

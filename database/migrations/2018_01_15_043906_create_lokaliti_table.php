@@ -15,6 +15,7 @@ class CreateLokalitiTable extends Migration
     {
         Schema::create('lokaliti', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_wilayah');
             $table->string('nama');
             $table->string('kod');
         });

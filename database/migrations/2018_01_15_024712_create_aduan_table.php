@@ -21,6 +21,7 @@ class CreateAduanTable extends Migration
             $table->string('masa_terima');
             $table->integer('id_staff');
             $table->integer('id_lot');
+            $table->integer('id_blok');
             $table->string('no_hakmilik');
             $table->string('nama_pengadu');
             $table->string('no_tel');

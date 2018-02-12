@@ -21,6 +21,7 @@
 || <a href="{{ route('status_pembayaran.index') }}">Tambah Status Pembayaran</a>||<br>
 || <a href="{{ route('kaedah_pembayaran.index') }}">Tambah Kaedah Pembayaran</a>||<br>
 || <a href="{{ route('kategori.index') }}">Tambah Kategori Pampasan</a>||<br>
+|| <a href="{{ route('ptj.index') }}">Tambah Maklumat PTJ</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('bank.index') }}">Tambah Maklumat Bank</a>&nbsp&nbsp&nbsp&nbsp	||
 
 <hr />

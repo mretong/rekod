@@ -5,32 +5,30 @@
 
 <hr />
 
-[ <a href="{{ route('borangh.create') }}">Tambah BorangK Baru</a> ] 
+[ <a href="{{ route('borangk.create') }}">Tambah BorangK Baru</a> ] 
 
 <hr />
 
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Lot</td>
-		<td><center>Kategori</td>
-		<td><center>No.KP</td>
-		<td><center>Nama</td>
+		<td><center>Blok</td>
+		<td><center>No. Lot</td>
+		<td><center>Tarikh Borang K</td>
 		<td><center>Pilihan</td>
 	</tr>
 
-	@foreach($borangh as $form)
+	@foreach($borangk as $formk)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $form->id_lot }}</td>
-		<td><center>{{ $form->kategori_pampasan }}</td>
-		<td><center>{{ $form->no_kp }}</td>
-		<td><center>{{ $form->nama }}</td>
+		<td><center>{{ $formk->id_blok }}</td>
+		<td><center>{{ $formk->id_lot }}</td>
+		<td><center>{{ $formk->tarikh_k }}</td>
 		
 		<td>
-				{!! Form::open(['route' => ['borangh.destroy', $form->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['borangk.destroy', $formk->id], 'method' => 'delete']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}	||			
-				{!! Form::close() !!}{!! Form::open(['route' => ['borangh.show', $form->id], 'method' => 'get']) !!}
+				{!! Form::close() !!}{!! Form::open(['route' => ['borangk.show', $formk->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
 			
