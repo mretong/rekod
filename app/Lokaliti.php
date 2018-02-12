@@ -8,7 +8,7 @@ class Lokaliti extends Model
 {
     protected $table = 'lokaliti';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama','kod'];
+    protected $fillable = ['id_wilayah','nama','kod'];
     public $timestamps = false;
 
     public function blok()

@@ -18,6 +18,7 @@
 || <a href="{{ route('status_bicara.index') }}">Tambah Status Bicara</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('tanah.index') }}">Tambah Status Tanah</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('status_aduan.index') }}">Tambah Status Aduan</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('status_blok.index') }}">Tambah Status Blok</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('status_pembayaran.index') }}">Tambah Status Pembayaran</a>||<br>
 || <a href="{{ route('kaedah_pembayaran.index') }}">Tambah Kaedah Pembayaran</a>||<br>
 || <a href="{{ route('kategori.index') }}">Tambah Kategori Pampasan</a>||<br>

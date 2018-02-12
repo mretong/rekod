@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Wilayah extends Model
+class StatusBlok extends Model
 {
-    protected $table = 'wilayah';
+    protected $table = 'status_blok';
     protected $primaryKey = 'id';
-    protected $fillable = ['id_daerah','nama','kod'];
+    protected $fillable = ['nama','kod'];
+
     public $timestamps = false;
 }

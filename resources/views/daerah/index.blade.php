@@ -16,6 +16,7 @@
 		<td><center>Bil</td>
 		<td><center>Daerah</td>
 		<td><center>Kod Daerah</td>
+		<td><center>Negeri</center></td>
 		<td><center>Pilihan</td>
 	</tr>
 
@@ -24,6 +25,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $district->nama }}</td>
 		<td><center>{{ $district->kod }}</td>
+		<td><center>{{ $district->id_negeri }} </td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['daerah.destroy', $district->id], 'method' => 'delete']) !!}

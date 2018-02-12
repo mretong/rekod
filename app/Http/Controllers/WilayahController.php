@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Wilayah;
+use App\Daerah;
 
 class WilayahController extends Controller
 {
@@ -15,15 +16,17 @@ class WilayahController extends Controller
 
     public function create()
     {
-    	return view('wilayah.create');
+        $daerah = Daerah::pluck('nama','id');
+    	return view('wilayah.create',compact('daerah'));
     }
 
     public function store(Request $request)
     {
     	$wilayah = new Wilayah;
 
-    	$wilayah->nama = $request->get('nama');
-    	$wilayah->kod  = $request->get('kod');
+    	$wilayah->nama          = $request->get('nama');
+    	$wilayah->kod           = $request->get('kod');
+        $wilayah->id_daerah     = $request->get('id_daerah');
 
     	$wilayah->save();
 
@@ -41,15 +44,18 @@ class WilayahController extends Controller
     public function show($id)
     {
     	$territory = Wilayah::findOrFail($id);
-    	return view('wilayah.show',compact('territory'));
+        $daerah = Daerah::pluck('nama','id');
+
+    	return view('wilayah.show',compact('territory','daerah'));
     }
 
     public function update($id, Request $request)
     {
     	$wilayah = Wilayah::find($id);
 
-    	$wilayah->nama = $request->get('nama');
-    	$wilayah->kod  = $request->get('kod');
+    	$wilayah->nama          = $request->get('nama');
+        $wilayah->kod           = $request->get('kod');
+        $wilayah->id_daerah     = $request->get('id_daerah');
 
     	$wilayah->save();
 

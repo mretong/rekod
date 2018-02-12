@@ -14,8 +14,9 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Mukim</td>
-		<td><center>No. Geran</td>
+		<td><center>Nama</td>
+		<td><center>Daerah</td>
+		<td><center>Wilayah</td>
 		<td><center>Pilihan</td>
 	</tr>
 
@@ -23,8 +24,9 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $stay->nama }}</td>
-		<td><center>{{ $stay->no_geran }}</td>
-		
+		<td><center>{{ $stay->id_daerah }}</td>
+		<td><center>{{ $stay->id_wilayah }}</td>
+
 		<td><center>
 				{!! Form::open(['route' => ['mukim.destroy', $stay->id], 'method' => 'delete']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}

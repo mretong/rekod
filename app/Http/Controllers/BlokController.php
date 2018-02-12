@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blok;
 use App\Fasa;
+use App\Lokaliti;
+use App\StatusBlok;
 
 class BlokController extends Controller
 {
@@ -17,10 +19,10 @@ class BlokController extends Controller
 
     public function create()
     {
-        // $blok = Blok::find(1);
-        // $blok->roles()->attach($id);
+        $lokaliti = Lokaliti::pluck('nama','id');
         $fasa = Fasa::pluck('nama','kod');
-        return view('blok.create',compact('fasa'));
+        $status = StatusBlok::pluck('nama','kod');
+        return view('blok.create',compact('fasa','lokaliti','status'));
     }
 
     public function store(Request $request)
@@ -28,16 +30,15 @@ class BlokController extends Controller
     	$blok = new Blok;
 
     	$blok->nama 			= $request->get('nama');
-    	$blok->jum_lot_total	= $request->get('total');
-    	$blok->anggaran_kos		= $request->get('kos');
+    	$blok->jum_lot_total	= $request->get('jum_lot_total');
+    	$blok->anggaran_kos		= $request->get('anggaran_kos');
     	$blok->status_batal		= $request->get('status');
     	$blok->id_fasa	        = $request->get('fasa');
-    	$blok->rujukan_jkptg	= $request->get('jkptg');
-    	$blok->rujukan_jps		= $request->get('jps');
-    	$blok->jajaran			= $request->get('jajaran');
+    	$blok->rujukan_jkptg	= $request->get('rujukan_jkptg');
+    	$blok->rujukan_jps		= $request->get('rujukan_jps');
+        $blok->id_lokaliti       = $request->get('id_lokaliti');
 
-    	// $blok->roles()->save();
-        $blok->save();
+    	$blok->save();
 
     	return redirect()->route('blok.index');
     }
@@ -52,22 +53,24 @@ class BlokController extends Controller
 
     public function show($id)
     {
-    	$bloks = Blok::findOrFail($id);
-        return view('blok.show', compact('bloks'));
+    	$tersier = Blok::findOrFail($id);
+        $lokaliti = Lokaliti::pluck('nama','id');
+        $fasa = Fasa::pluck('nama','kod');
+        return view('blok.show', compact('tersier','lokaliti','fasa'));
     }
 
     public function update($id, Request $request)
     {
         $blok = Blok::find($id);
 
-        $blok->nama 			= $request->get('nama');
-    	$blok->jum_lot_total	= $request->get('total');
-    	$blok->anggaran_kos		= $request->get('kos');
-    	$blok->status_batal		= $request->get('status');
-    	$blok->fasa_pengambilan	= $request->get('fasa');
-    	$blok->rujukan_jkptg	= $request->get('jkptg');
-    	$blok->rujukan_jps		= $request->get('jps');
-    	$blok->jajaran			= $request->get('jajaran');
+        $blok->nama             = $request->get('nama');
+        $blok->jum_lot_total    = $request->get('jum_lot_total');
+        $blok->anggaran_kos     = $request->get('anggaran_kos');
+        $blok->status_batal     = $request->get('status');
+        $blok->id_fasa          = $request->get('fasa');
+        $blok->rujukan_jkptg    = $request->get('rujukan_jkptg');
+        $blok->rujukan_jps      = $request->get('rujukan_jps');
+        $blok->id_lokaliti       = $request->get('id_lokaliti');
 
         $blok->save();
 

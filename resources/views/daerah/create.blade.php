@@ -18,6 +18,11 @@
 		{!! Form::text('kod','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
+	<div class="form-group row">
+		{!! Form::label('negeri', 'Negeri', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_negeri',$negeri, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
 
 	<div class="form-group">
 		{!! Form::submit('Tambah Daerah', ['class' => 'btn btn-primary']) !!}

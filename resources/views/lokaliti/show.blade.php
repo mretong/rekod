@@ -18,6 +18,11 @@
 		{!! Form::text('kod', null, ['class' => 'form-control col-sm-6']) !!}
 	</div>
 
+	<div class="form-group row">
+		{!! Form::label('wilayah', 'Wilayah', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_wilayah',$wilayah, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
 	<div class="form-group">
 		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
 		[ <a href="{{ route('lokaliti.index') }}">Kembali</a> ] 

@@ -24,8 +24,13 @@
 	</div>
 
 	<div class="form-group row">
+		{!! Form::label('lokaliti', 'Lokaliti',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_lokaliti', $lokaliti , 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
 		{!! Form::label('status', 'Status Batal',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('status', ['1'=>'Batal Pengambilan','2'=>'Pengambilan Baru'] , 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('status', $status , 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -43,14 +48,8 @@
 		{!! Form::text('jps','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
-	<div class="form-group row">
-		{!! Form::label('jajaran', 'Jajaran', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jajaran','',['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-
 	<div class="form-group">
-		{!! Form::submit('Tambah Blok', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah', ['class' => 'btn btn-primary']) !!}
 		[<a href="{{ route('blok.index') }}">Kembali</a>]
 	</div>
 

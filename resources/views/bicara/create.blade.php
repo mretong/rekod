@@ -61,6 +61,7 @@
 
 	<div class="form-group">
 		{!! Form::submit('Tambah Perbicaraan', ['class' => 'btn btn-primary']) !!}
+		[ <a href="{{ route('bicara.index') }}">Kembali</a> ]
 	</div>
 
 {!! Form::close() !!}

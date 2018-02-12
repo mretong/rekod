@@ -16,6 +16,7 @@
 		<td><center>Bil</td>
 		<td><center>Blok</td>
 		<td><center>Fasa Pengambilan</td>
+		<td><center>Lokaliti</td>
 		<td><center>Pilihan</td>
 	</tr>
 
@@ -24,6 +25,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $tersier->nama }}</td>
 		<td><center>{{ $tersier->id_fasa }}</td>
+		<td><center>{{ $tersier->id_lokaliti }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['blok.destroy', $tersier->id], 'method' => 'delete']) !!}

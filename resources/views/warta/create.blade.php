@@ -56,6 +56,7 @@
 
 	<div class="form-group">
 		{!! Form::submit('Tambah Warta', ['class' => 'btn btn-primary']) !!}
+		[ <a href="{{ route('warta.index') }}">Kembali</a> ]
 	</div>
 
 {!! Form::close() !!}

@@ -63,10 +63,13 @@ class PerbicaraanController extends Controller
 
     public function show($id)
     {
-    	$bicara = Perbicaraan::findOrFail($id);
-        $staf   = Staff::pluck('nama','no_pekerja'); 
+        $hears  = Perbicaraan::findOrFail($id);
+    	$staf   =   Staff::pluck('nama','no_pekerja');
+        $lot    =   Lot::pluck('nama','id');
+        $sb     =   StatusBicara::pluck('nama','id');
+        $blok   =   Blok::pluck('nama','id'); 
 
-    	return view('bicara.show',compact('bicara','staf'));
+    	return view('bicara.show',compact('hears','blok','staf','lot','sb'));
     }
 
     public function update($id, Request $request)
