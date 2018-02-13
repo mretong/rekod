@@ -15,7 +15,7 @@
 	<tr>
 		<td><center>Bil</td>
 		<td><center>Lot</td>
-		<td><center>No. Perbicaraan</td>
+		<td><center>Nama Pemilik</td>
 		<td><center>Status Pembayaran</td>
 		<td><center>Pilihan</td>
 	</tr>

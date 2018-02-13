@@ -15,6 +15,7 @@ class CreatePemilikTable extends Migration
     {
         Schema::create('pemilik', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_blok');
             $table->integer('id_lot');
             $table->string('nama');
             $table->string('no_kp');

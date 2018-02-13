@@ -7,10 +7,15 @@
 
 
 {!! Form::open(['route' => 'borangh.store']) !!}
+	
+	<div class="form-group row">
+		{!! Form::label('blok', 'Blok', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_blok', $blok, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
 
 	<div class="form-group row">
 		{!! Form::label('lot', 'No. Lot', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -25,7 +30,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('kategori', 'Kategori Pampasan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('kategori', $kategori, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('kategori_pampasan', $kategori, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group">

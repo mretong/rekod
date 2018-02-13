@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Pemilik;
 use App\Blok;
-use App\Fasa;
-use App\Pakej;
 use App\Lot;
 use App\KategoriPampasan;
 
@@ -22,23 +20,22 @@ class BorangHController extends Controller
     public function create()
     {
     	$blok 	=	Blok::pluck('nama','id');
-    	$fasa 	=	Fasa::pluck('nama','id');
-    	$pakej 	=	Pakej::pluck('nama','id');
     	$lot 	=	Lot::pluck('nama','id');
         $kategori = KategoriPampasan::pluck('nama','id');
     	//dd($blok);
 
-    	return view('borangh.create',compact('blok','fasa','pakej','lot','kategori'));
+    	return view('borangh.create',compact('blok','lot','kategori'));
     }
 
     public function store(Request $request)
     {
         $borangh = new Pemilik;
 
-        $borangh->id_lot                    = $request->get('lot');
+        $borangh->id_blok                   = $request->get('id_blok');
+        $borangh->id_lot                    = $request->get('id_lot');
         $borangh->nama                      = $request->get('nama');
         $borangh->no_kp                     = $request->get('no_kp');
-        $borangh->kategori_pampasan         = $request->get('kategori');
+        $borangh->kategori_pampasan         = $request->get('kategori_pampasan');
 
         $borangh->save();
 
@@ -55,18 +52,23 @@ class BorangHController extends Controller
 
     public function show($id)
     {
-        $form = Pemilik::findOrFail($id);
-        return view('borangh.show',compact('form'));
+        $form       =   Pemilik::findOrFail($id);
+        $blok       =   Blok::pluck('nama','id');
+        $lot        =   Lot::pluck('nama','id');
+        $kategori   =   KategoriPampasan::pluck('nama','id');
+
+        return view('borangh.show',compact('form','blok','lot','kategori'));
     }
 
     public function update($id, Request $request)
     {
         $borangh = Pemilik::find($id);
 
-        $borangh->id_lot        = $request->get('lot');
-        $borangh->nama          = $request->get('nama');
-        $borangh->no_kp         = $request->get('no_kp');
-        $borangh->kategori      = $request->get('kategori');
+        $borangh->id_blok                   = $request->get('id_blok');
+        $borangh->id_lot                    = $request->get('id_lot');
+        $borangh->nama                      = $request->get('nama');
+        $borangh->no_kp                     = $request->get('no_kp');
+        $borangh->kategori_pampasan         = $request->get('kategori_pampasan');
 
         $borangh->save();
 
