@@ -29,13 +29,14 @@
 		<td><center>{{ $form->nama }}</td>
 		
 		<td>
-		<div class="form-group row">
 				{!! Form::open(['route' => ['borangh.destroy', $form->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}	||			
-				{!! Form::close() !!}{!! Form::open(['route' => ['borangh.show', $form->id], 'method' => 'get']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}
+				{!! Form::close() !!}
+				{!! Form::open(['route' => ['borangh.show', $form->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
-		</div>
+
+		
 			
 	</tr>
 	@endforeach
