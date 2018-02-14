@@ -15,4 +15,9 @@ class Lot extends Model
     {
     	return $this->belongTo('App\Perbicaraan');
     }
+
+    public function pemilik()
+    {
+    	return $this->belongsToMany('App\Pemilik','lot_pemilik','id_lot','id_pemilik');
+    }
 }
