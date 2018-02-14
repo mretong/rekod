@@ -14,8 +14,8 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Lot</td>
 		<td><center>Nama Pemilik</td>
+		<td><center>No.K/Pengenalan</td>
 		<td><center>Status Pembayaran</td>
 		<td><center>Pilihan</td>
 	</tr>
@@ -23,8 +23,9 @@
 	@foreach($bayar as $pay)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $pay->nama }}</td>
+		<td><center>{{ $pay->id_pemilik }}</td>
 		<td><center>{{ $pay->kod }}</td>
+		<td><center>{{ $pay->status }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}

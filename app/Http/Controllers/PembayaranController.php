@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Pembayaran;
 use App\Bank;
 use App\Perbicaraan;
+use App\Pemilik;
 use App\KaedahPembayaran;
 use App\StatusPembayaran;
 
@@ -19,20 +20,22 @@ class PembayaranController extends Controller
 
     public function create()
     {
-    	$bank = Bank::pluck('nama','kod');
+    	$bank = Bank::pluck('nama','id');
         $bicara = Perbicaraan::pluck('id_lot','id');
-        $kaedah = KaedahPembayaran::pluck('nama','kod');
-        $status = StatusPembayaran::pluck('nama','kod');
+        $kaedah = KaedahPembayaran::pluck('nama','id');
+        $status = StatusPembayaran::pluck('nama','id');
+        $pemilik = Pemilik::pluck('nama','id');
         
-    	return view('pembayaran.create',compact('bank','bicara','kaedah','status'));
+    	return view('pembayaran.create',compact('bank','bicara','kaedah','status','pemilik'));
     }
 
     public function store(Request $request)
     {
     	$bayar = new Pembayaran;
 
-    	$bayar->bank 			= $request->get('bank');
-    	$bayar->bicara			= $request->get('bicara');
+        $bayar->id_pemilik      = $request->get('id_pemilik');
+    	$bayar->id_bank 		= $request->get('id_bank');
+    	$bayar->id_perbicaraan	= $request->get('id_perbicaraan');
     	$bayar->no_akaun		= $request->get('no_akaun');
     	$bayar->kaedah_bayaran	= $request->get('kaedah_bayaran');
     	$bayar->no_baucer		= $request->get('no_baucer');
@@ -69,20 +72,21 @@ class PembayaranController extends Controller
     {
     	$bayar = Pembayaran::find($id);
 
-    	$bayar->bank 			= $request->get('bank');
-    	$bayar->bicara			= $request->get('bicara');
-    	$bayar->no_akaun		= $request->get('no_akaun');
-    	$bayar->kaedah_bayaran	= $request->get('kaedah_bayaran');
-    	$bayar->no_baucer		= $request->get('no_baucer');
-    	$bayar->attachment 		= $request->get('attachment');
-    	$bayar->tarikh_baucer 	= $request->get('tarikh_baucer');
-    	$bayar->no_cek 			= $request->get('no_cek');
-    	$bayar->tarikh_cek 		= $request->get('tarikh_cek');
-    	$bayar->rujukan 		= $request->get('rujukan');
-    	$bayar->catatan 		= $request->get('catatan');
-    	$bayar->status 			= $request->get('status');
-    	$bayar->rujukan_denda 	= $request->get('rujukan_denda');
-    	$bayar->tarikh_denda	= $request->get('tarikh_denda');
+    	$bayar->id_pemilik      = $request->get('id_pemilik');
+        $bayar->id_bank         = $request->get('id_bank');
+        $bayar->id_perbicaraan  = $request->get('id_perbicaraan');
+        $bayar->no_akaun        = $request->get('no_akaun');
+        $bayar->kaedah_bayaran  = $request->get('kaedah_bayaran');
+        $bayar->no_baucer       = $request->get('no_baucer');
+        $bayar->attachment      = $request->get('attachment');
+        $bayar->tarikh_baucer   = $request->get('tarikh_baucer');
+        $bayar->no_cek          = $request->get('no_cek');
+        $bayar->tarikh_cek      = $request->get('tarikh_cek');
+        $bayar->rujukan         = $request->get('rujukan');
+        $bayar->catatan         = $request->get('catatan');
+        $bayar->status          = $request->get('status');
+        $bayar->rujukan_denda   = $request->get('rujukan_denda');
+        $bayar->tarikh_denda    = $request->get('tarikh_denda');
 
     	$bayar->save();
 

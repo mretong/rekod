@@ -24,13 +24,13 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('no_kp', 'No. Kad Pengenalan',['class'	=>	'form control col-sm-2']) !!}
-		{!! Form::text('no_kp', null, ['class' => 'form-control col-sm-6']) !!}
+		{!! Form::label('no_kp', 'No. Kad Pengenalan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('no_kp',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('kategori', 'Kategori Pampasan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('kategori_pampasan', null,  $kategori, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('kategori_pampasan', $kategori, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group">

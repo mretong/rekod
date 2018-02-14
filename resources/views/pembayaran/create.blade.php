@@ -9,13 +9,18 @@
 {!! Form::open(['route' => 'pembayaran.store']) !!}
 
 	<div class="form-group row">
+		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
 		{!! Form::label('bicara', 'Perbicaraan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('bicara', $bicara, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_perbicaraan', $bicara, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('bank', 'Bank', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('bank', $bank, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_bank', $bank, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
