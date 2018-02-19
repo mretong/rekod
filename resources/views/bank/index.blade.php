@@ -25,10 +25,18 @@
 		<td><center>{{ $banks->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['bank.destroy', $banks->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+				{!! Form::open(['route' => ['bank.destroy', $banks->id], 'method' => 'delete', 'onclick'=> 'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['bank.show', $banks->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+				<script>
+					function myFunction()
+					{
+						if(!confirm("Are you sure want to delete BANK information from system???"))
+							event.preventDefault();
+					}
+				</script>		
 	</tr>
 	@endforeach
 

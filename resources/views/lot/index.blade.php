@@ -28,10 +28,18 @@
 		<td><center>{{ $soil->status_tanah }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['lot.destroy', $soil->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['lot.destroy', $soil->id], 'method' => 'delete', 'onclick'=> 'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['lot.show', $soil->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are You Sure to Delete this Lot data from the system?"))
+							event.preventDefault();
+						}
+					</script>			
 	</tr>
 	@endforeach
 

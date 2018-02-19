@@ -55,8 +55,15 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Warta', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah Warta', ['class' => 'btn btn-primary', 'onclick' => 'return myFunction();'] ) !!}
 		[ <a href="{{ route('warta.index') }}">Kembali</a> ]
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Adakah anda pasti untuk tambah maklumat warta ini?"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

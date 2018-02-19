@@ -26,10 +26,18 @@
 		<td><center>{{ $pay->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['kaedah_pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['kaedah_pembayaran.destroy', $pay->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['kaedah_pembayaran.show', $pay->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are you sure??"))
+								event.preventDefault();
+						}
+					</script>		
 	</tr>
 	@endforeach
 

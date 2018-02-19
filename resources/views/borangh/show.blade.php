@@ -34,8 +34,16 @@
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-		[ <a href="{{ route('borangh.index') }}">Kembali</a> ] 
+		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		[ <a href="{{ route('borangh.index') }}">Kembali</a> ]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure to Update this data??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 

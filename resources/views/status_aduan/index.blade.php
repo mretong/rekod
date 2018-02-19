@@ -26,10 +26,18 @@
 		<td><center>{{ $sas->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['status_aduan.destroy', $sas->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+				{!! Form::open(['route' => ['status_aduan.destroy', $sas->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['status_aduan.show', $sas->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are you sure you want to delete this STATUS ADUAN from the system?"))
+								event.preventDefault();
+						}
+					</script>		
 	</tr>
 	@endforeach
 

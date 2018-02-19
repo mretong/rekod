@@ -38,8 +38,16 @@
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Tambah', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
 		[<a href="{{ route('borangk.index') }}">Kembali</a>]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

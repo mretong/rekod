@@ -15,7 +15,7 @@ class CreateAduanTable extends Migration
     {
         Schema::create('aduan', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('no_aduan');
+            $table->string('no_aduan');
             $table->date('tarikh_terima');
             $table->date('tarikh_selesai');
             $table->string('masa_terima');

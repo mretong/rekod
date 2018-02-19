@@ -10,7 +10,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('aduan', 'No. Aduan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('aduan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('aduan','MADA/BPPP/NKEA/',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -75,8 +75,16 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Aduan', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah Aduan', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
 		[<a href="{{ route('aduan.index') }}">Kembali</a>]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure to create this new data??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

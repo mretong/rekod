@@ -30,10 +30,18 @@
 		<td><center>{{ $rep->status_aduan }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['aduan.destroy', $rep->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+				{!! Form::open(['route' => ['aduan.destroy', $rep->id], 'method' => 'delete','onclick'=>'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['aduan.show', $rep->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+				<script>
+					function myFunction()
+					{
+						if(!confirm("Are you sure want to remove this report??"))
+							event.preventDefault();
+					}
+				</script>
 	</tr>
 	@endforeach
 

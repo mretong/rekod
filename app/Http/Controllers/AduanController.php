@@ -57,7 +57,10 @@ class AduanController extends Controller
 	public function show($id)
 	{
 		$rep = Aduan::findOrFail($id);
-		return view('aduan.index',compact('rep'));
+        $staff = Staff::pluck('nama','no_pekerja');
+        $lot = Lot::pluck('nama','id');
+        $sa = StatusAduan::pluck('nama','id');
+		return view('aduan.index',compact('rep','staff','lot','sa'));
 	}
 
 	public function update($id, Request $request)

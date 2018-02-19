@@ -26,10 +26,18 @@
 		<td><center>{{ $list->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['kategori.destroy', $list->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+				{!! Form::open(['route' => ['kategori.destroy', $list->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['kategori.show', $list->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are you sure??"))
+								event.preventDefault();
+						}
+					</script>		
 	</tr>
 	@endforeach
 

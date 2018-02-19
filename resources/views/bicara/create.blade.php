@@ -60,8 +60,16 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Perbicaraan', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Tambah', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
 		[ <a href="{{ route('bicara.index') }}">Kembali</a> ]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure to add this PERBICARAAN??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Session;
+use Auth;
+
 use App\Negeri;
 
 class NegeriController extends Controller
@@ -33,7 +37,12 @@ class NegeriController extends Controller
     public function destroy($id)
     {
     	$negeri = Negeri::find($id);
-        $negeri->delete();
+        
+        if($negeri->delete()) {
+            Session::flash('success', 'Berjaya. Negeri ini telah dihapuskan dari sistem ini.');
+        } else {
+            Session::flash('success', 'Berjaya. Negeri ini telah dihapuskan dari sistem ini.');
+        }
 
         return redirect()->route('negeri.index');
     }

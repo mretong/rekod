@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Kemaskini Maklumat Pakej</h1>
+<h1>Kemaskini Maklumat Borang K</h1>
 
 <hr />
 
@@ -38,8 +38,16 @@
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-		[ <a href="{{ route('borangk.index') }}">Kembali</a> ] 
+		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		[ <a href="{{ route('borangk.index') }}">Kembali</a> ]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure to update this data??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 

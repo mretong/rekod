@@ -6,11 +6,11 @@
 
 <hr />
 
-{!! Form::model($rep, ['route' => ['negeri.update', $rep->id], 'method' => 'PATCH']) !!}
+{!! Form::model($rep, ['route' => ['aduan.update', $rep->id], 'method' => 'PATCH']) !!}
 
 	<div class="form-group row">
 		{!! Form::label('aduan', 'No. Aduan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('aduan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('aduan',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -25,7 +25,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('masa', 'Masa Terima', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('masa','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('masa',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -40,32 +40,32 @@
 
 	<div class="form-group row">
 		{!! Form::label('hakmilik', 'No. Hak Milik', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('hakmilik','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('hakmilik',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('pengadu', 'Nama Pengadu', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('pengadu','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('pengadu',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('no_tel', 'No. Tel Pengadu', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('no_tel','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('no_tel',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('catatan', 'Catatan', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('catatan','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('catatan',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('maklumbalas', 'Maklumbalas', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('maklumbalas','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('maklumbalas',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('pemaklum', 'Pemaklum', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('pemaklum','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('pemaklum',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -74,8 +74,16 @@
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-		[ <a href="{{ route('negeri.index') }}">Kembali</a> ] 
+		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		[ <a href="{{ route('negeri.index') }}">Kembali</a> ]
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure want to update this data??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 

@@ -26,10 +26,18 @@
 		<td><center>{{ $sbs->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['status_bicara.destroy', $sbs->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['status_bicara.destroy', $sbs->id], 'method' => 'delete','onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['status_bicara.show', $sbs->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are You Sure to Delete this Status Bicara data from the system?"))
+							event.preventDefault();
+						}
+					</script>			
 	</tr>
 	@endforeach
 

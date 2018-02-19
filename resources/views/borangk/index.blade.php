@@ -26,11 +26,19 @@
 		<td><center>{{ $formk->tarikh_k }}</td>
 		
 		<td>
-				{!! Form::open(['route' => ['borangk.destroy', $formk->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}	||			
+				{!! Form::open(['route' => ['borangk.destroy', $formk->id], 'method' => 'delete','onclick'=>'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}	||			
 				{!! Form::close() !!}{!! Form::open(['route' => ['borangk.show', $formk->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
+
+				<script>
+					function myFunction()
+					{
+						if(!confirm("Are you sure want to remove this data??"))
+							event.preventDefault();
+					}
+				</script>
 			
 	</tr>
 	@endforeach

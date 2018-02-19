@@ -26,10 +26,18 @@
 		<td><center>{{ $land->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['tanah.destroy', $land->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['tanah.destroy', $land->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['tanah.show', $land->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are you sure you want to delete this STATUS TANAH from system?"))
+								event.preventDefault();
+						}
+					</script>		
 	</tr>
 	@endforeach
 

@@ -26,10 +26,18 @@
 		<td><center>{{ $ptjs->kod }}</td>
 		
 		<td><center>
-				{!! Form::open(['route' => ['ptj.destroy', $ptjs->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+				{!! Form::open(['route' => ['ptj.destroy', $ptjs->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['ptj.show', $ptjs->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+
+				<script>
+					function myFunction()
+					{
+						if(!confirm("Are you sure want to delete data from PTJ??"))
+							event.preventDefault();
+					}
+				</script>		
 	</tr>
 	@endforeach
 

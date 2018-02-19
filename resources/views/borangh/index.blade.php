@@ -29,12 +29,20 @@
 		<td><center>{{ $form->nama }}</td>
 		
 		<td>
-				{!! Form::open(['route' => ['borangh.destroy', $form->id], 'method' => 'delete']) !!}
+				{!! Form::open(['route' => ['borangh.destroy', $form->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}
 				{!! Form::close() !!}
 				{!! Form::open(['route' => ['borangh.show', $form->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
+
+				<script>
+					function myFunction()
+					{
+						if(!confirm("Are you sure??"))
+							event.preventDefault();
+					}
+				</script>
 
 		
 			

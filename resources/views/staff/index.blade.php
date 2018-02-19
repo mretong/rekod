@@ -28,8 +28,16 @@
 		<td><center>
 				{!! Form::open(['route' => ['staff.show', $pic->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
-				{!! Form::open(['route' => ['staff.destroy', $pic->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-danger','glyphicon glyphicon-trash']) !!}{!! Form::close() !!}	
+				{!! Form::open(['route' => ['staff.destroy', $pic->id], 'method' => 'delete', 'onclick' => 'return myFunction();']) !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger','glyphicon glyphicon-trash']) !!}{!! Form::close() !!}
+
+					<script>
+						function myFunction()
+						{
+							if(!confirm("Are You Sure to Delete this Staff data from the system?"))
+							event.preventDefault();
+						}
+					</script>		
 	</tr>
 	@endforeach
 
