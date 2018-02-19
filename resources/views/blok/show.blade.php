@@ -50,7 +50,8 @@
 
 	<div class="form-group">
 		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-		[ <a href="{{ route('blok.index') }}">Kembali</a> ] 
+		&nbsp
+		<a href="{{ route('blok.index') }}" class="btn btn-info">Kembali</a> 
 	</div>
 
 

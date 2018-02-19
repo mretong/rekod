@@ -21,7 +21,7 @@ class BlokController extends Controller
     {
         $lokaliti = Lokaliti::pluck('nama','id');
         $fasa = Fasa::pluck('nama','kod');
-        $status = StatusBlok::pluck('nama','kod');
+        $status = StatusBlok::pluck('nama','id');
         return view('blok.create',compact('fasa','lokaliti','status'));
     }
 
@@ -31,12 +31,12 @@ class BlokController extends Controller
 
     	$blok->nama 			= $request->get('nama');
     	$blok->jum_lot_total	= $request->get('jum_lot_total');
-    	$blok->anggaran_kos		= $request->get('anggaran_kos');
+        $blok->anggaran_kos     = $request->get('anggaran_kos');
+    	$blok->id_lokaliti		= $request->get('id_lokaliti');
     	$blok->status_batal		= $request->get('status');
     	$blok->id_fasa	        = $request->get('fasa');
     	$blok->rujukan_jkptg	= $request->get('rujukan_jkptg');
     	$blok->rujukan_jps		= $request->get('rujukan_jps');
-        $blok->id_lokaliti       = $request->get('id_lokaliti');
 
     	$blok->save();
 
@@ -56,7 +56,8 @@ class BlokController extends Controller
     	$tersier = Blok::findOrFail($id);
         $lokaliti = Lokaliti::pluck('nama','id');
         $fasa = Fasa::pluck('nama','kod');
-        return view('blok.show', compact('tersier','lokaliti','fasa'));
+        $status = StatusBlok::pluck('nama','id');
+        return view('blok.show', compact('tersier','lokaliti','fasa','status'));
     }
 
     public function update($id, Request $request)
@@ -66,11 +67,11 @@ class BlokController extends Controller
         $blok->nama             = $request->get('nama');
         $blok->jum_lot_total    = $request->get('jum_lot_total');
         $blok->anggaran_kos     = $request->get('anggaran_kos');
+        $blok->id_lokaliti      = $request->get('id_lokaliti');
         $blok->status_batal     = $request->get('status');
         $blok->id_fasa          = $request->get('fasa');
         $blok->rujukan_jkptg    = $request->get('rujukan_jkptg');
         $blok->rujukan_jps      = $request->get('rujukan_jps');
-        $blok->id_lokaliti       = $request->get('id_lokaliti');
 
         $blok->save();
 

@@ -11,8 +11,8 @@ class Staff extends Model
     protected $fillable = ['no_pekerja','nama'];
     public $timestamps = false;
 
-    public function bicara()
+    public function perbicaraan()
     {
-    	return $this->hasMany('App\Perbicaraan');
+    	return $this->belongsTo('App\Perbicaraan');
     }
 }

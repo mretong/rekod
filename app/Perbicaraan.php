@@ -13,7 +13,7 @@ class Perbicaraan extends Model
 
     public function warta()
     {
-    	return $this->belongsTo('App\Perbicaraan');
+    	return $this->belongsTo('App\Warta');
     }
 
     public function lot()

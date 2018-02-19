@@ -55,7 +55,8 @@
 
 <div class="form-group">
 	{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-	[ <a href="{{ route('warta.index') }}">Kembali</a> ] 
+	&nbsp
+	<a href="{{ route('warta.index') }}" class="btn btn-info">Kembali</a>
 </div>
 
 

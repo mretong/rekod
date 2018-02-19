@@ -35,7 +35,8 @@
 
 	<div class="form-group">
 		{!! Form::submit('Tambah', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
-		[<a href="{{ route('borangh.index') }}">Kembali</a>]
+		&nbsp
+		<a href="{{ route('borangh.index') }}" class="btn btn-info">Kembali</a>]
 
 		<script>
 			function myFunction()

@@ -21,7 +21,7 @@ class DaerahController extends Controller
     	return view('daerah.create',compact('negeri'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
     	$daerah = new Daerah;
 

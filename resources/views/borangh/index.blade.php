@@ -5,19 +5,19 @@
 
 <hr />
 
-[ <a href="{{ route('borangh.create') }}">Tambah BorangH Baru</a> ]
-[ <a href="{{ route('pembayaran.index') }}">Tambah Maklumat Pembayaran Baru</a> ]
+<a href="{{ route('borangh.create') }}" class="btn btn-warning"><b>Tambah BorangH Baru</b></a>
+<a href="{{ route('pembayaran.index') }}" class="btn btn-warning"><b>Tambah Maklumat Pembayaran Baru</b></a>
 
 <hr />
 
 <table class="table table-bordered table-striped">
 	<tr>
-		<td><center>Bil</td>
-		<td><center>Lot</td>
-		<td><center>Blok</td>
-		<td><center>No.KP</td>
-		<td><center>Nama</td>
-		<td><center>Pilihan</td>
+		<td><center><b>Bil</b></td>
+		<td><center><b>Lot</b></td>
+		<td><center><b>Blok</b></td>
+		<td><center><b>No.KP</b></td>
+		<td><center><b>Nama</b></td>
+		<td><center><b>Pilihan</b></td>
 	</tr>
 
 	@foreach($borangh as $form)

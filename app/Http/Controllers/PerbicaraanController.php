@@ -14,9 +14,9 @@ class PerbicaraanController extends Controller
     public function index()
     {
     	$bicara = Perbicaraan::all();
-        $staf   = Staff::all();
+        // $staf   = Staff::all();
     	// dd('here');
-    	return view ('bicara.index',compact('bicara','staf'));
+    	return view ('bicara.index',compact('bicara'));
     }
 
     public function create()
@@ -82,7 +82,7 @@ class PerbicaraanController extends Controller
     	$bicara->tarikh_4			=	$request->get('tarikh_4');
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
     	$bicara->id_lot				=	$request->get('id_lot');
-    	$bicara->nama_pentadbir		=	$request->get('nama');
+    	$bicara->no_pekerja    		=	$request->get('no_pekerja');
     	$bicara->status				=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');
     	$bicara->pampasan			=	$request->get('pampasan');

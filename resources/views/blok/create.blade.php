@@ -15,12 +15,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('total', 'Jumlah Lot Total', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('total','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('jum_lot_total','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('kos', 'Anggaran Kos', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('kos','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('anggaran_kos','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -40,17 +40,25 @@
 
 	<div class="form-group row">
 		{!! Form::label('jkptg', 'Rujukan JKPTG', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jkptg','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan_jkptg','JKPTG(S).KDH/',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('jps', 'Rujukan JPS', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jps','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan_jps','JPS(MUDA)/',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group">
-		{!! Form::submit('Tambah', ['class' => 'btn btn-primary']) !!}
-		[<a href="{{ route('blok.index') }}">Kembali</a>]
+		{!! Form::submit('Tambah', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		&nbsp <a href="{{ route('blok.index') }}" class="btn btn-info">Kembali</a>
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

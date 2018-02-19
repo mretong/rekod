@@ -6,7 +6,7 @@
 
 <hr />
 
-[ <a href="{{ route('bicara.create') }}">Tambah Perbicaraan Baru</a> ] 
+<a href="{{ route('bicara.create') }}" class="btn btn-warning"><b>Tambah Perbicaraan Baru</b></a>
 
 <hr />
 
@@ -23,7 +23,7 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $hears->id_lot }}</td>
-		<td><center>{{ $hears->no_pekerja }}</td>
+		<td><center>{{ $hears->no_pekerja }} </td>
 		<td><center>{{ $hears->status }}</td>
 		
 		<td>

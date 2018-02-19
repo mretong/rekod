@@ -20,8 +20,16 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Bank', ['class' => 'btn btn-primary']) !!}
-		[<a href="{{ route('bank.index') }}">Kembali</a>]
+		{!! Form::submit('Tambah Bank', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		&nbsp<a href="{{ route('bank.index') }}" class="btn btn-info">Kembali</a>
+
+		<script>
+			function myFunction()
+			{
+				if(!confirm("Are you sure want to create this data??"))
+					event.preventDefault();
+			}
+		</script>
 	</div>
 
 {!! Form::close() !!}

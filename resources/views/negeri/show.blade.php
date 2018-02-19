@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Kemaskini Maklumat Pakej</h1>
+<h1>Kemaskini Maklumat Negeri</h1>
 
 <hr />
 
@@ -20,7 +20,7 @@
 
 	<div class="form-group">
 		{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
-		[ <a href="{{ route('negeri.index') }}">Kembali</a> ] 
+		&nbsp<a href="{{ route('negeri.index') }}" class="btn btn-info">Kembali</a>
 	</div>
 
 

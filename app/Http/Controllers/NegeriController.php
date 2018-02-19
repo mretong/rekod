@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Session;
 use Auth;
+use Validator;
+use Session;
+use Redirect;
 
 use App\Negeri;
 
 class NegeriController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
     	$negeri = Negeri::all();
@@ -24,14 +31,40 @@ class NegeriController extends Controller
 
     public function store(Request $request)
     {
-    	$negeri = new Negeri;
+        if(Auth::user()->status == 0)
+        {
+            Session::flush();
+            Session::flash('error', 'Ralat.');
+            Auth::logout();
+            return redirect()->route('login');
+        }
 
-    	$negeri->nama         =   $request->get('nama');
-        $negeri->kod          =   $request->get('kod');
+        if($request->get('nama') != '')
+        {
+            $nama = Negeri::where('nama', $request->get('nama'))->first();
 
-        $negeri->save();
+            if($nama != null)
+            {
+                Session::flash('error', 'Negeri ini telah wujud. Sila buat carian untuk pengemaskinian. (eg: penambahan atau pengurangan acara)');
+                return back()->withInput($request->all());
+            }
+        }
+    	
+        $validation = Validator::make($request->all(), [
+            'nama'      => 'required|min:4',
+            'kod'      => 'required|min:3',
+        ]);
 
-        return redirect()->route('negeri.index');
+        if($validation->fails()){
+            Session::flash('error', 'Ruangan Nama Negeri dan kod negeri adalah wajib diisi. <br />Perlu diisi dengan format yang betul');
+            return back()->withInput($request->all());
+        }
+
+        // $negeri = new Negeri;
+    	// $negeri->nama         =   $request->get('nama');
+        // $negeri->kod          =   $request->get('kod');
+        // $negeri->save();
+        // return redirect()->route('negeri.index');
     }
 
     public function destroy($id)

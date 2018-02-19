@@ -7,7 +7,7 @@
 
 <hr />
 
-[ <a href="{{ route('warta.create') }}">Tambah Warta Baru</a> ] 
+<a href="{{ route('warta.create') }}" class="btn btn-warning"><b>Tambah Warta Baru</b></a>
 
 <hr />
 
