@@ -18,7 +18,7 @@ class BorangKController extends Controller
     public function create()
     {
     	$blok = Blok::pluck('nama','id');
-    	$lot = Lot::pluck('nama','id');
+    	$lot = Lot::pluck('no_lot','id');
     	return view('borangk.create',compact('blok','lot'));
     }
 
@@ -50,7 +50,7 @@ class BorangKController extends Controller
     {
     	$formk = BorangK::findOrFail($id);
     	$blok = Blok::pluck('nama','id');
-    	$lot = Lot::pluck('nama','id');
+    	$lot = Lot::pluck('no_lot','id');
 
     	return view('borangk.show',compact('formk','blok','lot'));
     }

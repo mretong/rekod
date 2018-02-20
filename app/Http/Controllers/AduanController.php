@@ -19,7 +19,7 @@ class AduanController extends Controller
     public function create()
     {
     	$staff = Staff::pluck('nama','no_pekerja');
-    	$lot = Lot::pluck('nama','id');
+    	$lot = Lot::pluck('no_lot','id');
     	$sa = StatusAduan::pluck('nama','id');
     	return view('aduan.create',compact('staff','lot','sa'));
     }
@@ -58,7 +58,7 @@ class AduanController extends Controller
 	{
 		$rep = Aduan::findOrFail($id);
         $staff = Staff::pluck('nama','no_pekerja');
-        $lot = Lot::pluck('nama','id');
+        $lot = Lot::pluck('no_lot','id');
         $sa = StatusAduan::pluck('nama','id');
 		return view('aduan.index',compact('rep','staff','lot','sa'));
 	}

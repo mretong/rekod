@@ -8,7 +8,8 @@ class Lot extends Model
 {
     protected $table = 'lot';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama','pakej','status_tanah'];
+    protected $fillable = ['no_lot','no_hakmilik','id_mukim','id_blok','id_pakej','status_tanah'];
+    
     public $timestamps = false;
 
     public function perbicaraan()

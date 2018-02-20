@@ -14,11 +14,6 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('geran', 'No. Geran', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('geran','',['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
 		{!! Form::label('daerah', 'Daerah', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('id_daerah',$daerah, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>

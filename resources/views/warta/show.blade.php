@@ -8,19 +8,19 @@
 
 {!! Form::model($news, ['route' => ['warta.update', $news->id], 'method' => 'PATCH']) !!}
 
-<div class="form-group row">
+	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('blok', $blok, $blok, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_blok', $blok, $blok, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('fasa', 'Fasa', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('fasa', $fasa, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_fasa', $fasa, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('pakej', 'Pakej', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('pakej',$pakej, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_pakej',$pakej, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -35,7 +35,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('jilid', 'Jilid Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('jilid', null ,['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('jilid_warta', null ,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

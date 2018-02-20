@@ -45,7 +45,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('jps', 'Rujukan JPS', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('rujukan_jps','JPS(MUDA)/',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan_jps','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group">

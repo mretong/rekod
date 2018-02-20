@@ -16,10 +16,10 @@ class CreatePerbicaraanTable extends Migration
         Schema::create('perbicaraan', function (Blueprint $table) {
             $table->increments('id');
             $table->date('tarikh_1');
-            $table->date('tarikh_2');
-            $table->date('tarikh_3');
-            $table->date('tarikh_4');
-            $table->date('tarikh_5');
+            $table->date('tarikh_2')->nullable();
+            $table->date('tarikh_3')->nullable();
+            $table->date('tarikh_4')->nullable();
+            $table->date('tarikh_5')->nullable();
             $table->integer('id_lot');
             $table->integer('id_blok');
             $table->string('no_pekerja');
@@ -27,8 +27,8 @@ class CreatePerbicaraanTable extends Migration
             $table->string('bilangan');
             $table->float('pampasan',8,2);
             $table->float('kos_lain',8,2);
-            $table->string('catatan');
-            $table->string('jajaran');
+            $table->string('catatan')->nullable();
+            $table->string('jajaran')->nullable();
         });
     }
 

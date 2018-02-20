@@ -5,24 +5,29 @@
 
 <hr />
 <center>
-|| <a href="{{ route('negeri.index') }}" class="btn btn-info">Tambah Maklumat Negeri</a>&nbsp&nbsp||<br>
-|| <a href="{{ route('daerah.index') }}" class="btn btn-warning">Tambah Maklumat Daerah</a> 	||<br>
-|| <a href="{{ route('mukim.index') }}" class="btn btn-danger">Tambah Maklumat Mukim</a> 	||<br>
-|| <a href="{{ route('lokaliti.index') }}" class="btn btn-default">Tambah Maklumat Lokaliti</a> ||<br>
-|| <a href="{{ route('pakej.index') }}"  class="btn btn-primary">Tambah Maklumat Pakej</a>&nbsp&nbsp&nbsp&nbsp||<br>
-|| <a href="{{ route('fasa.index') }}" class="btn btn-success">Tambah Maklumat Fasa</a>&nbsp&nbsp&nbsp&nbsp 	||<br>
-|| <a href="{{ route('lot.index') }}" class="btn btn-light">Tambah Maklumat Lot</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
-|| <a href="{{ route('blok.index') }}">Tambah Maklumat Blok</a>&nbsp&nbsp&nbsp&nbsp	||<br>
-|| <a href="{{ route('staff.index') }}">Tambah Maklumat Staff</a>&nbsp&nbsp&nbsp&nbsp	||<br>
+<a href="{{ route('negeri.index') }}" class="btn btn-warning">Tambah Maklumat Negeri</a>&nbsp&nbsp<br>
+|| <a href="{{ route('daerah.index') }}" class="btn btn-info">Tambah Maklumat Daerah</a> 	||<br>
 || <a href="{{ route('wilayah.index') }}">Tambah Maklumat Wilayah</a>||<br>
-|| <a href="{{ route('status_bicara.index') }}">Tambah Status Bicara</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
-|| <a href="{{ route('tanah.index') }}">Tambah Status Tanah</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
-|| <a href="{{ route('status_aduan.index') }}">Tambah Status Aduan</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('mukim.index') }}">Tambah Maklumat Mukim</a> 	||<br>
+
+|| <a href="{{ route('lokaliti.index') }}">Tambah Maklumat Lokaliti</a> ||<br>
+|| <a href="{{ route('pakej.index') }}">Tambah Maklumat Pakej</a>&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('fasa.index') }}">Tambah Maklumat Fasa</a>&nbsp&nbsp&nbsp&nbsp 	||<br>
 || <a href="{{ route('status_blok.index') }}">Tambah Status Blok</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('blok.index') }}">Tambah Maklumat Blok</a>&nbsp&nbsp&nbsp&nbsp	||<br>
+|| <a href="{{ route('tanah.index') }}">Tambah Status Tanah</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('lot.index') }}">Tambah Maklumat Lot</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('ptj.index') }}">Tambah Maklumat PTJ</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('staff.index') }}">Tambah Maklumat Staff</a>&nbsp&nbsp&nbsp&nbsp	||<br>
+
+|| <a href="{{ route('status_bicara.index') }}">Tambah Status Bicara</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+
+|| <a href="{{ route('status_aduan.index') }}">Tambah Status Aduan</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+
 || <a href="{{ route('status_pembayaran.index') }}">Tambah Status Pembayaran</a>||<br>
 || <a href="{{ route('kaedah_pembayaran.index') }}">Tambah Kaedah Pembayaran</a>||<br>
 || <a href="{{ route('kategori.index') }}">Tambah Kategori Pampasan</a>||<br>
-|| <a href="{{ route('ptj.index') }}">Tambah Maklumat PTJ</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+
 || <a href="{{ route('bank.index') }}">Tambah Maklumat Bank</a>&nbsp&nbsp&nbsp&nbsp	||
 
 <hr />

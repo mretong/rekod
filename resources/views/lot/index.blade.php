@@ -14,18 +14,20 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Nama Lot</td>
+		<td><center>Blok</td>
+		<td><center>Lot</td>
+		<td><center>Hakmilik</td>
 		<td><center>Pakej</td>
-		<td><center>Status Tanah</td>
 		<td><center>Pilihan</td>
 	</tr>
 
 	@foreach($lot as $soil)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $soil->nama }}</td>
+		<td><center>{{ $soil->id_blok }}</td>
+		<td><center>{{ $soil->no_lot }}</td>
+		<td><center>{{ $soil->no_hakmilik }}</td>
 		<td><center>{{ $soil->id_pakej }}</td>
-		<td><center>{{ $soil->status_tanah }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['lot.destroy', $soil->id], 'method' => 'delete', 'onclick'=> 'return myFunction();']) !!}

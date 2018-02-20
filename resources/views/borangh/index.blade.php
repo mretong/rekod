@@ -5,7 +5,7 @@
 
 <hr />
 
-<a href="{{ route('borangh.create') }}" class="btn btn-warning"><b>Tambah BorangH Baru</b></a>
+<a href="{{ route('borangh.create') }}" class="btn btn-warning"><b>Tambah Maklumat Pemilik</b></a>
 <a href="{{ route('pembayaran.index') }}" class="btn btn-warning"><b>Tambah Maklumat Pembayaran Baru</b></a>
 
 <hr />

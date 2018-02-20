@@ -20,7 +20,7 @@ class BorangHController extends Controller
     public function create()
     {
     	$blok 	=	Blok::pluck('nama','id');
-    	$lot 	=	Lot::pluck('nama','id');
+    	$lot 	=	Lot::pluck('no_lot','id');
         $kategori = KategoriPampasan::pluck('nama','id');
     	//dd($blok);
 
@@ -54,7 +54,7 @@ class BorangHController extends Controller
     {
         $form       =   Pemilik::findOrFail($id);
         $blok       =   Blok::pluck('nama','id');
-        $lot        =   Lot::pluck('nama','id');
+        $lot        =   Lot::pluck('no_lot','id');
         $kategori   =   KategoriPampasan::pluck('nama','id');
 
         return view('borangh.show',compact('form','blok','lot','kategori'));

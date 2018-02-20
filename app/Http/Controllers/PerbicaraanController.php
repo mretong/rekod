@@ -22,7 +22,7 @@ class PerbicaraanController extends Controller
     public function create()
     {
     	$staf 	= 	Staff::pluck('nama','no_pekerja');
-    	$lot 	=	Lot::pluck('nama','id');
+    	$lot 	=	Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id');
     	//dd($staf);
@@ -65,7 +65,7 @@ class PerbicaraanController extends Controller
     {
         $hears  = Perbicaraan::findOrFail($id);
     	$staf   =   Staff::pluck('nama','no_pekerja');
-        $lot    =   Lot::pluck('nama','id');
+        $lot    =   Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id'); 
 

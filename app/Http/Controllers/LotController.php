@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Lot;
 use App\Pakej;
 use App\StatusTanah;
+use App\Blok;
+use App\Mukim;
 
 class LotController extends Controller
 {
@@ -19,16 +21,22 @@ class LotController extends Controller
     {
     	$pakej = Pakej::pluck('nama','kod');
         $tanah = StatusTanah::pluck('nama','id');
-    	return view('lot.create',compact('pakej','tanah'));
+        $blok  = Blok::pluck('nama','id');
+        $mukim = Mukim::pluck('nama','id');
+
+    	return view('lot.create',compact('pakej','tanah','blok','mukim'));
     }
 
     public function store(Request $request)
     {
     	$lot = new Lot;
 
-    	$lot->nama = $request->get('nama');
-    	$lot->id_pakej = $request->get('pakej');
+    	$lot->id_blok      = $request->get('no_blok');
+    	$lot->id_pakej     = $request->get('pakej');
     	$lot->status_tanah = $request->get('tanah');
+        $lot->no_lot       = $request->get('no_lot');
+        $lot->no_hakmilik  = $request->get('no_hakmilik');
+        $lot->id_mukim     = $request->get('id_mukim');
 
     	$lot->save();
     	return redirect()->route('lot.index');
@@ -44,17 +52,25 @@ class LotController extends Controller
 
     public function show($id)
     {
-    	$soil = Lot::findOrFail($id);
-    	return view('lot.show',compact('soil'));
+    	$soil  = Lot::findOrFail($id);
+        $pakej = Pakej::pluck('nama','kod');
+        $tanah = StatusTanah::pluck('nama','id');
+        $blok  = Blok::pluck('nama','id');
+        $mukim = Mukim::pluck('nama','id');
+
+    	return view('lot.show',compact('soil','pakej','tanah','blok','mukim'));
     }
 
     public function update($id, Request $request)
     {
     	$lot = Lot::find($id);
 
-    	$lot->nama = $request->get('nama');
-    	$lot->id_pakej = $request->get('pakej');
-    	$lot->status_tanah = $request->get('tanah');
+    	$lot->id_blok      = $request->get('no_blok');
+        $lot->id_pakej     = $request->get('pakej');
+        $lot->status_tanah = $request->get('tanah');
+        $lot->no_lot       = $request->get('no_lot');
+        $lot->no_hakmilik  = $request->get('no_hakmilik');
+        $lot->id_mukim     = $request->get('id_mukim');
 
     	$lot->save();
     	return redirect()->route('lot.index');

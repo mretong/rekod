@@ -22,8 +22,8 @@ class CreateWartaTable extends Migration
             $table->date('tarikh_luput');
             $table->string('jilid_warta');
             $table->integer('no_warta');
-            $table->string('rujukan');
-            $table->string('catatan');
+            $table->string('rujukan')->nullable();
+            $table->string('catatan')->nullable();
         });
     }
 

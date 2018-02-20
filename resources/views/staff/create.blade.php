@@ -20,7 +20,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('ptj', 'PTJ', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('ptj',$ptj, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_ptj',$ptj, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group">

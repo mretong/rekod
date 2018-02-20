@@ -13,68 +13,81 @@ class DaerahTableSeeder extends Seeder
     public function run()
     {
         Daerah::create([
-        	'nama'	=>	'Sungai Petani',
-        	'kod'	=>	'SP'
+        	'nama'	     =>	'Sungai Petani',
+        	'kod'	     =>	'SP',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Kota Setar',
-        	'kod'	=>	'KS'
+        	'kod'	=>	'KS',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Kulim',
-        	'kod'	=>	'KLM'
+        	'kod'	=>	'KLM',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Kubang Pasu',
-        	'kod'	=>	'KP'
+        	'kod'	=>	'KP',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Baling',
-        	'kod'	=>	'BLG'
+        	'kod'	=>	'BLG',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Pendang',
-        	'kod'	=>	'PDG'
+        	'kod'	=>	'PDG',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Langkawi',
-        	'kod'	=>	'LKW'
+        	'kod'	=>	'LKW',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Yan',
-        	'kod'	=>	'YAN'
+        	'kod'	=>	'YAN',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Sik',
-        	'kod'	=>	'SIK'
+        	'kod'	=>	'SIK',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Padang Terap',
-        	'kod'	=>	'PT'
+        	'kod'	=>	'PT',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Pokok Sena',
-        	'kod'	=>	'PS'
+        	'kod'	=>	'PS',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Bandar Baharu',
-        	'kod'	=>	'BB'
+        	'kod'	=>	'BB',
+            'id_negeri'  => '1'
         ]);
 
         Daerah::create([
         	'nama'	=>	'Perlis',
-        	'kod'	=>	'PLS'
+        	'kod'	=>	'PLS',
+            'id_negeri'  => '2'
         ]);
     }
 }

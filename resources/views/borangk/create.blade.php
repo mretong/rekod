@@ -25,12 +25,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('rujukan_k', 'Rujukan Borang K', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('rujukan_k','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan_k','JKPTG(S).KDH/',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('rujukan_fail', 'Rujukan Fail', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('rujukan_fail','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('rujukan_fail','MADA/BPPP/',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

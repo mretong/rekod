@@ -26,7 +26,7 @@ class StaffController extends Controller
 
     	$staff->no_pekerja 	= $request->get('no_pekerja');
     	$staff->nama 		= $request->get('nama');
-        $staff->ptj         = $request->get('ptj');
+        $staff->id_ptj      = $request->get('id_ptj');
 
     	$staff->save();
     	return redirect()->route('staff.index');
@@ -43,7 +43,8 @@ class StaffController extends Controller
     public function show($id)
     {
         $pic = Staff::findOrFail($id);
-        $ptj = Ptj::pluck('nama','id');
+        $ptj = Ptj::pluck('nama','kod');
+        
         return view('staff.show',compact('pic','ptj'));
     }
 
@@ -53,7 +54,7 @@ class StaffController extends Controller
 
         $staff->no_pekerja  = $request->get('no_pekerja');
         $staff->nama        = $request->get('nama');
-        $staff->ptj         = $request->get('ptj');
+        $staff->id_ptj         = $request->get('id_ptj');
 
         $staff->save();
         return redirect()->route('staff.index');

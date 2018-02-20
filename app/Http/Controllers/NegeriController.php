@@ -31,40 +31,11 @@ class NegeriController extends Controller
 
     public function store(Request $request)
     {
-        if(Auth::user()->status == 0)
-        {
-            Session::flush();
-            Session::flash('error', 'Ralat.');
-            Auth::logout();
-            return redirect()->route('login');
-        }
-
-        if($request->get('nama') != '')
-        {
-            $nama = Negeri::where('nama', $request->get('nama'))->first();
-
-            if($nama != null)
-            {
-                Session::flash('error', 'Negeri ini telah wujud. Sila buat carian untuk pengemaskinian. (eg: penambahan atau pengurangan acara)');
-                return back()->withInput($request->all());
-            }
-        }
-    	
-        $validation = Validator::make($request->all(), [
-            'nama'      => 'required|min:4',
-            'kod'      => 'required|min:3',
-        ]);
-
-        if($validation->fails()){
-            Session::flash('error', 'Ruangan Nama Negeri dan kod negeri adalah wajib diisi. <br />Perlu diisi dengan format yang betul');
-            return back()->withInput($request->all());
-        }
-
-        // $negeri = new Negeri;
-    	// $negeri->nama         =   $request->get('nama');
-        // $negeri->kod          =   $request->get('kod');
-        // $negeri->save();
-        // return redirect()->route('negeri.index');
+        $negeri = new Negeri;
+    	$negeri->nama         =   $request->get('nama');
+        $negeri->kod          =   $request->get('kod');
+        $negeri->save();
+        return redirect()->route('negeri.index');
     }
 
     public function destroy($id)

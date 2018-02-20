@@ -16,6 +16,7 @@
 		<td><center>Bil</td>
 		<td><center>Nama Staff</td>
 		<td><center>No. Pekerja</td>
+		<td><center>PTJ</td>
 		<td><center>Pilihan</td>
 	</tr>
 
@@ -24,6 +25,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $pic->nama }}</td>
 		<td><center>{{ $pic->no_pekerja }}</td>
+		<td><center>{{ $pic->id_ptj }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['staff.show', $pic->id], 'method' => 'get']) !!}

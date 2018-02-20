@@ -17,7 +17,7 @@ class DaerahController extends Controller
 
     public function create()
     {
-        $negeri = Negeri::pluck('nama','kod');
+        $negeri = Negeri::pluck('nama','id');
     	return view('daerah.create',compact('negeri'));
     }
 
@@ -45,7 +45,7 @@ class DaerahController extends Controller
     public function show($id)
     {
     	$district = Daerah::findOrFail($id);
-        $negeri = Negeri::pluck('nama','kod');
+        $negeri = Negeri::pluck('nama','id');
         return view('daerah.show', compact('district','negeri'));
     }
 

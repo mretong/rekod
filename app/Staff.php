@@ -8,7 +8,7 @@ class Staff extends Model
 {
     protected $table = 'staff';
     protected $primaryKey = 'id';
-    protected $fillable = ['no_pekerja','nama'];
+    protected $fillable = ['no_pekerja','nama','id_ptj'];
     public $timestamps = false;
 
     public function perbicaraan()

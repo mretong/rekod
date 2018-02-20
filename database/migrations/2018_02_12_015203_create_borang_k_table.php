@@ -20,7 +20,7 @@ class CreateBorangKTable extends Migration
             $table->date('tarikh_k');
             $table->string('rujukan_k');
             $table->string('rujukan_fail');
-            $table->string('attachment');
+            $table->string('attachment')->nullable();
         });
     }
 
