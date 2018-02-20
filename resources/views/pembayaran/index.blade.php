@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('pembayaran.create') }}">Tambah Maklumat Pembayaran Baru</a> ] 
+<a href="{{ route('pembayaran.create') }}" class="btn btn-warning"><b>Tambah Maklumat Pembayaran Baru</b></a>
+<a href="{{ route('borangh.index') }}" class="btn btn-warning"><b>Kembali ke Menu Borang H</b></a>
 
 <hr />
 
@@ -29,7 +30,7 @@
 		
 		<td><center>
 				{!! Form::open(['route' => ['pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
 				{!! Form::open(['route' => ['pembayaran.show', $pay->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
 	</tr>

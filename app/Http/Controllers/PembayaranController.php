@@ -64,8 +64,13 @@ class PembayaranController extends Controller
     public function show($id)
     {
     	$pay = Pembayaran::findOrFail($id);
+        $bank = Bank::pluck('nama','id');
+        $bicara = Perbicaraan::pluck('id_lot','id');
+        $kaedah = KaedahPembayaran::pluck('nama','id');
+        $status = StatusPembayaran::pluck('nama','id');
+        $pemilik = Pemilik::pluck('nama','id');
 
-    	return view('pembayaran.show',compact('pay'));
+    	return view('pembayaran.show',compact('pay','bank','bicara','kaedah','status','pemilik'));
     }
 
     public function update($id, Request $request)

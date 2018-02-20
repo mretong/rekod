@@ -5,7 +5,7 @@
 
 <hr />
 
-[ <a href="{{ route('borangk.create') }}">Tambah BorangK Baru</a> ] 
+<a href="{{ route('borangk.create') }}" class="btn btn-warning"><b>Tambah BorangK Baru</b></a> 
 
 <hr />
 

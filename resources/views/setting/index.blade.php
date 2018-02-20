@@ -5,13 +5,13 @@
 
 <hr />
 <center>
-|| <a href="{{ route('negeri.index') }}">Tambah Maklumat Negeri</a>&nbsp&nbsp||<br>
-|| <a href="{{ route('daerah.index') }}">Tambah Maklumat Daerah</a> 	||<br>
-|| <a href="{{ route('mukim.index') }}">Tambah Maklumat Mukim</a> 	||<br>
-|| <a href="{{ route('lokaliti.index') }}">Tambah Maklumat Lokaliti</a> ||<br>
-|| <a href="{{ route('pakej.index') }}">Tambah Maklumat Pakej</a>&nbsp&nbsp&nbsp&nbsp||<br>
-|| <a href="{{ route('fasa.index') }}">Tambah Maklumat Fasa</a>&nbsp&nbsp&nbsp&nbsp 	||<br>
-|| <a href="{{ route('lot.index') }}">Tambah Maklumat Lot</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('negeri.index') }}" class="btn btn-info">Tambah Maklumat Negeri</a>&nbsp&nbsp||<br>
+|| <a href="{{ route('daerah.index') }}" class="btn btn-warning">Tambah Maklumat Daerah</a> 	||<br>
+|| <a href="{{ route('mukim.index') }}" class="btn btn-danger">Tambah Maklumat Mukim</a> 	||<br>
+|| <a href="{{ route('lokaliti.index') }}" class="btn btn-default">Tambah Maklumat Lokaliti</a> ||<br>
+|| <a href="{{ route('pakej.index') }}"  class="btn btn-primary">Tambah Maklumat Pakej</a>&nbsp&nbsp&nbsp&nbsp||<br>
+|| <a href="{{ route('fasa.index') }}" class="btn btn-success">Tambah Maklumat Fasa</a>&nbsp&nbsp&nbsp&nbsp 	||<br>
+|| <a href="{{ route('lot.index') }}" class="btn btn-light">Tambah Maklumat Lot</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp||<br>
 || <a href="{{ route('blok.index') }}">Tambah Maklumat Blok</a>&nbsp&nbsp&nbsp&nbsp	||<br>
 || <a href="{{ route('staff.index') }}">Tambah Maklumat Staff</a>&nbsp&nbsp&nbsp&nbsp	||<br>
 || <a href="{{ route('wilayah.index') }}">Tambah Maklumat Wilayah</a>||<br>
