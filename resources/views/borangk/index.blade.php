@@ -5,8 +5,8 @@
 
 <hr />
 
-<a href="{{ route('borangk.create') }}" class="btn btn-warning"><b>Tambah BorangK Baru</b></a> 
-
+<a href="{{ route('borangk.create') }}" class="btn btn-warning" style="float: right;"><b>Tambah BorangK Baru</b></a> 
+&nbsp
 <hr />
 
 <table class="table table-bordered table-striped">

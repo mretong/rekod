@@ -34,8 +34,13 @@
 	</div>
 
 	<div class="form-group row">
+		{!! Form::label('blok', 'Blok', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_blok',$blok, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
 		{!! Form::label('lot', 'No.Lot', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('lot',$lot, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_lot',$lot, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -75,7 +80,7 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Tambah Aduan', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
+		{!! Form::submit('Simpan', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
 		<a href="{{ route('aduan.index') }}" class="btn btn-info">Kembali</a>
 
 		<script>

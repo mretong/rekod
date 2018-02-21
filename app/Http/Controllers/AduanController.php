@@ -7,6 +7,7 @@ use App\Aduan;
 use App\Staff;
 use App\Lot;
 use App\StatusAduan;
+use App\Blok;
 
 class AduanController extends Controller
 {
@@ -21,7 +22,8 @@ class AduanController extends Controller
     	$staff = Staff::pluck('nama','no_pekerja');
     	$lot = Lot::pluck('no_lot','id');
     	$sa = StatusAduan::pluck('nama','id');
-    	return view('aduan.create',compact('staff','lot','sa'));
+        $blok = Blok::pluck('nama','id');
+    	return view('aduan.create',compact('staff','lot','sa','blok'));
     }
 
     public function store(Request $request)
@@ -60,7 +62,9 @@ class AduanController extends Controller
         $staff = Staff::pluck('nama','no_pekerja');
         $lot = Lot::pluck('no_lot','id');
         $sa = StatusAduan::pluck('nama','id');
-		return view('aduan.index',compact('rep','staff','lot','sa'));
+        $blok = Blok::pluck('nama','id');
+
+		return view('aduan.index',compact('rep','staff','lot','sa','blok'));
 	}
 
 	public function update($id, Request $request)
@@ -72,7 +76,8 @@ class AduanController extends Controller
     	$aduan->tarikh_selesai	= $request->get('tarikh_selesai');
     	$aduan->masa_terima		= $request->get('masa');
     	$aduan->id_staff		= $request->get('staff');
-    	$aduan->id_lot			= $request->get('lot');
+        $aduan->id_lot          = $request->get('id_lot');
+    	$aduan->id_blok			= $request->get('id_blok');
     	$aduan->no_hakmilik		= $request->get('hakmilik');
     	$aduan->nama_pengadu	= $request->get('pengadu');
     	$aduan->no_tel 			= $request->get('no_tel');

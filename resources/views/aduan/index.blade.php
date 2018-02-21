@@ -7,8 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('aduan.create') }}">Tambah Maklumat Aduan Baru</a> ] 
-
+<a href="{{ route('aduan.create') }}" class="btn btn-warning" style="float: right"><b>Tambah </b></a>
+&nbsp
 <hr />
 
 <table class="table table-bordered table-striped">

@@ -6,8 +6,8 @@
 
 <hr />
 
-<a href="{{ route('bicara.create') }}" class="btn btn-warning"><b>Tambah Perbicaraan Baru</b></a>
-
+<a href="{{ route('bicara.create') }}" class="btn btn-warning" style="float: right"><b>Tambah</b></a>
+&nbsp
 <hr />
 
 <table class="table table-bordered table-striped">

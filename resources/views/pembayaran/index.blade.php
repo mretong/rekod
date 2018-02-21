@@ -7,18 +7,18 @@
 
 <hr />
 
-<a href="{{ route('pembayaran.create') }}" class="btn btn-warning"><b>Tambah Maklumat Pembayaran Baru</b></a>
-<a href="{{ route('borangh.index') }}" class="btn btn-warning"><b>Kembali ke Menu Borang H</b></a>
+<a href="{{ route('pembayaran.create') }}" class="btn btn-warning"><b>+</b></a>
+<a href="{{ route('borangh.index') }}" class="btn btn-info" style="float: right;">Kembali ke Menu Borang H</a>
 
 <hr />
 
 <table class="table table-bordered table-striped">
 	<tr>
-		<td><center>Bil</td>
-		<td><center>Nama Pemilik</td>
-		<td><center>No.K/Pengenalan</td>
-		<td><center>Status Pembayaran</td>
-		<td><center>Pilihan</td>
+		<td>{!! Form::label('bil', 'Bil.') !!}</td>
+		<td>{!! Form::label('pemilik', 'Nama Pemilik') !!}</td>
+		<td>{!! Form::label('no_kp', 'No. K/Pengenalan') !!}</td>
+		<td>{!! Form::label('sb', 'Status Pembayaran') !!}</td>
+		<td>{!! Form::label('pilih', 'Pilihan') !!}</td>
 	</tr>
 
 	@foreach($bayar as $pay)
@@ -39,3 +39,5 @@
 </table>
 
 @endsection
+
+<!-- , ['class'=>'form control col-sm-2'] -->

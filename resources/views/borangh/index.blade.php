@@ -5,8 +5,8 @@
 
 <hr />
 
-<a href="{{ route('borangh.create') }}" class="btn btn-warning"><b>Tambah Maklumat Pemilik</b></a>
-<a href="{{ route('pembayaran.index') }}" class="btn btn-warning"><b>Tambah Maklumat Pembayaran Baru</b></a>
+<a href="{{ route('borangh.create') }}" class="btn btn-warning""><b>Tambah Pemilik</b></a> &nbsp&nbsp
+<a href="{{ route('pembayaran.index') }}" class="btn btn-warning" style="float: right;"><b>Tambah Pembayaran</b></a>
 
 <hr />
 
