@@ -22,7 +22,7 @@
 	@foreach($bicara as $hears)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $hears->id_lot }}</td>
+		<td><center>{{ $hears->lot->no_hakmilik }} - {{$hears->lot->no_lot}} </td>
 		<td><center>{{ $hears->no_pekerja }} </td>
 		<td><center>{{ $hears->status }}</td>
 		
