@@ -6,9 +6,8 @@
 <h1>Warta Menu</h1>
 
 <hr />
-
-<a href="{{ route('warta.create') }}" class="btn btn-warning"><b>Tambah Warta Baru</b></a>
-
+<a href="{{ route('warta.create') }}" class="btn btn-warning" style="float: right"><b>Tambah</b></a>
+&nbsp
 <hr />
 
 <table class="table table-bordered table-striped">
@@ -28,7 +27,7 @@
 		<td><center>{{ $news->no_warta }}</td>
 		<td><center>{{ $news->tarikh_warta }}</td>
 		<td><center>{{ $news->tarikh_luput }}</td>
-		
+		<div class="form-group row">
 		<td>
 				{!! Form::open(['route' => ['warta.destroy', $news->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}	||			
@@ -42,7 +41,7 @@
 						if(!confirm("Are you sure you want to delete this WARTA information??"))
 							event.preventDefault();
 					}
-				</script>
+				</script></div>
 			
 	</tr>
 	@endforeach
