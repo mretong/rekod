@@ -20,4 +20,9 @@ class Perbicaraan extends Model
     {
         return $this->belongsTo('App\Staff','no_pekerja','id');
     }
+
+    public function status()
+    {
+        return $this->belongsTo('App\StatusBicara','status','id');
+    }
 }

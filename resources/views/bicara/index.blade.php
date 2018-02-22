@@ -13,7 +13,7 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Lot</td>
+		<td><center>Hakmilik & No. Lot</td>
 		<td><center>Nama Pentadbir</td>
 		<td><center>Status</td>
 		<td><center>Pilihan</td>

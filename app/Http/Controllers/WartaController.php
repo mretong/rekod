@@ -73,12 +73,12 @@ class WartaController extends Controller
     {
         $warta = Warta::find($id);
 
-        $warta->id_blok         =   $request->get('blok');
-        $warta->id_fasa         =   $request->get('fasa');
-        $warta->id_pakej        =   $request->get('pakej');
+        $warta->id_blok         =   $request->get('id_blok');
+        $warta->id_fasa         =   $request->get('id_fasa');
+        $warta->id_pakej        =   $request->get('id_pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
         $warta->tarikh_luput    =   $request->get('tarikh_luput');
-        $warta->jilid_warta     =   $request->get('jilid');
+        $warta->jilid_warta     =   $request->get('jilid_warta');
         $warta->no_warta        =   $request->get('no_warta');
         $warta->rujukan         =   $request->get('rujukan');
         $warta->catatan         =   $request->get('catatan');

@@ -21,12 +21,12 @@ class PerbicaraanController extends Controller
 
     public function create()
     {
-    	$staf 	= 	Staff::pluck('nama','no_pekerja');
+    	$staff 	= 	Staff::pluck('nama','no_pekerja');
     	$lot 	=	Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id');
     	//dd($staf);
-    	return view('bicara.create',compact('staf', 'lot','sb','blok'));
+    	return view('bicara.create',compact('staff', 'lot','sb','blok'));
     }
 
     public function store(Request $request)
@@ -64,12 +64,12 @@ class PerbicaraanController extends Controller
     public function show($id)
     {
         $hears  = Perbicaraan::findOrFail($id);
-    	$staf   =   Staff::pluck('nama','no_pekerja');
+    	$staff   =   Staff::pluck('nama','no_pekerja');
         $lot    =   Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id'); 
 
-    	return view('bicara.show',compact('hears','blok','staf','lot','sb'));
+    	return view('bicara.show',compact('hears','blok','staff','lot','sb'));
     }
 
     public function update($id, Request $request)

@@ -13,6 +13,6 @@ class Staff extends Model
 
     public function perbicaraan()
     {
-    	return $this->belongsTo('App\Perbicaraan');
+    	return $this->belongsTo('App\Perbicaraan','no_pekerja','id');
     }
 }

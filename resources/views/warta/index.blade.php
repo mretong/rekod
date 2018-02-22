@@ -21,9 +21,9 @@
 	</tr>
 
 	@foreach($warta as $news)
-	<tr>
+	<tr>                                                      
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $news->blok->id }} - {{$news->blok->nama}} </td>
+		<td><center>{{ $news->blok->nama }} </td>
 		<td><center>{{ $news->no_warta }}</td>
 		<td><center>{{ $news->tarikh_warta }}</td>
 		<td><center>{{ $news->tarikh_luput }}</td>
