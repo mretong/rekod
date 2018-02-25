@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Auth;
+use Validator;
+use Session;
+use Redirect;
+
 use App\Warta;
 use App\Blok;
 use App\Fasa;
@@ -32,6 +38,38 @@ class WartaController extends Controller
 
     public function store(Request $request)
     {
+        if(Auth::user()->status == 0) {
+            Session::flush();
+            Session::flash('error', 'Ralat.');
+            Auth::logout();
+            return redirect()->route('login');
+        }
+
+        if($request->get('no_warta') != '') {
+            $no_warta = Warta::where('no_warta', $request->get('no_warta'))->first();
+
+            if($no_warta != null) {
+                Session::flash('alert-danger', 'Jilid Warta dengan No Warta ini telah wujud. Sila buat carian untuk pengemaskinian. (eg: penambahan atau pengurangan)');
+                return back()->withInput($request->all());
+            }
+        }
+
+        $validation = Validator::make($request->all(), [
+            'blok'              => 'required',
+            'fasa'              => 'required',
+            'pakej'             => 'required',
+            'tarikh_warta'      => 'required',
+            'tarikh_luput'      => 'required',
+            'jilid'             => 'required|min:2',
+            'no_warta'          => 'required|min:2',
+            
+        ]);
+
+        if($validation->fails()){
+            Session::flash('alert-danger', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi. <br />Perlu diisi dengan format yang betul');
+            return back()->withInput($request->all());
+        }
+
         $warta = new Warta;
 
         $warta->id_blok         =   $request->get('blok');
