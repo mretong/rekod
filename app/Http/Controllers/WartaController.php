@@ -33,7 +33,7 @@ class WartaController extends Controller
 
          //dd('here');
 
-    	return view('warta.create',compact(['blok','fasa','pakej','mukim']));
+    	return view('warta.create',compact('blok','fasa','pakej','mukim'));
     }
 
     public function store(Request $request)
@@ -49,7 +49,7 @@ class WartaController extends Controller
             $no_warta = Warta::where('no_warta', $request->get('no_warta'))->first();
 
             if($no_warta != null) {
-                Session::flash('alert-danger', 'Jilid Warta dengan No Warta ini telah wujud. Sila buat carian untuk pengemaskinian. (eg: penambahan atau pengurangan)');
+                Session::flash('alert-danger', 'Jilid Warta dengan No Warta ini telah wujud. Sila buat carian untuk pengemaskinian atau .');
                 return back()->withInput($request->all());
             }
         }
@@ -66,7 +66,7 @@ class WartaController extends Controller
         ]);
 
         if($validation->fails()){
-            Session::flash('alert-danger', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi. <br />Perlu diisi dengan format yang betul');
+            Session::flash('alert-danger', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
             return back()->withInput($request->all());
         }
 
