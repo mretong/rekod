@@ -80,7 +80,7 @@
     @show
     <div class="container">
             @yield('content')
-        </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

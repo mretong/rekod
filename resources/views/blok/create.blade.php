@@ -64,4 +64,14 @@
 {!! Form::close() !!}
 
 <hr />
+
+<script language="javascript">
+
+function uppercase() {
+	alert('here');
+}
+
+
+
+</script>
 @endsection

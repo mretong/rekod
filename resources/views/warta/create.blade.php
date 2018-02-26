@@ -5,17 +5,17 @@
 <h1>Add Warta</h1>
 <hr />
 
+@include('includes._session_errors')
+@include('includes._form_errors')
+
+
+
 
 {!! Form::open(['route' => 'warta.store']) !!}
 
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('blok', $blok, 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('fasa', 'Fasa', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('fasa', $fasa, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -26,11 +26,6 @@
 	<div class="form-group row">
 		{!! Form::label('tarikh_warta', 'Tarikh Warta', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::date('tarikh_warta', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('tarikh_luput', 'Tarikh Luput Warta', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::date('tarikh_luput', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -55,16 +50,9 @@
 
 
 	<div class="form-group">
-		{!! Form::submit('Simpan', ['class' => 'btn btn-primary', 'onclick' => 'return myFunction();'] ) !!}
+		{!! Form::submit('Simpan', ['class' => 'btn btn-primary'] ) !!}
 		&nbsp
 		<a href="{{ route('warta.index') }}" class="btn btn-info">Kembali</a>
-		<script>
-			function myFunction()
-			{
-				if(!confirm("Adakah anda pasti untuk tambah maklumat warta ini?"))
-					event.preventDefault();
-			}
-		</script>
 	</div>
 
 {!! Form::close() !!}

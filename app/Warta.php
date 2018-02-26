@@ -11,6 +11,8 @@ class Warta extends Model
     protected $fillable = ['id_blok','id_fasa','id_pakej','tarikh_warta','tarikh_luput','jilid_warta','no_warta','rujukan','catatan'];
     public $timestamps = false;
 
+    protected $dates = ['tarikh_warta', 'tarikh_luput'];
+
     public function blok()
     {
     	return $this->belongsTo('App\Blok','id_blok','id');

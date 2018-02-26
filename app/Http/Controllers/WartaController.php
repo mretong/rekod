@@ -15,13 +15,14 @@ use App\Fasa;
 use App\Pakej;
 use App\Mukim;
 
+use Carbon\Carbon;
+
 class WartaController extends Controller
 {
     public function index()
     {
     	$warta = Warta::all();
-
-    	return view('warta.index',compact('warta'));
+       	return view('warta.index',compact('warta'));
     }
 
     public function create()
@@ -38,22 +39,24 @@ class WartaController extends Controller
 
     public function store(Request $request)
     {
+        // #1
         if(Auth::user()->status == 0) {
             Session::flush();
-            Session::flash('error', 'Ralat.');
+            Session::flash('message', 'Ralat.');
             Auth::logout();
             return redirect()->route('login');
         }
 
-        if($request->get('no_warta') != '') {
-            $no_warta = Warta::where('no_warta', $request->get('no_warta'))->first();
+        // #2
+        $no_warta = $request->get('no_warta');
+        $warta = Warta::where('no_warta', $no_warta)->get();
 
-            if($no_warta != null) {
-                Session::flash('alert-danger', 'Jilid Warta dengan No Warta ini telah wujud. Sila buat carian untuk pengemaskinian atau .');
-                return back()->withInput($request->all());
-            }
+        if(empty($warta)) {
+            Session::flash('message', 'No Warta telah wujud.');
+            return redirect('warta.index');
         }
 
+        // #3
         $validation = Validator::make($request->all(), [
             'blok'              => 'required',
             'fasa'              => 'required',
@@ -65,10 +68,24 @@ class WartaController extends Controller
             
         ]);
 
-        if($validation->fails()){
-            Session::flash('alert-danger', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
-            return back()->withInput($request->all());
+        // #4
+        $warta = Warta::where('no_jilid', $request->get('no_jilid'))
+                    ->where('no_warta', $request->get('no_warta'))
+                    ->get();
+        if(!empty($warta)) {
+            Session::flash('message', 'No Jilid dan No Warta telah wujud');
+            return back()->withInput();
         }
+
+
+        if($validation->fails()){
+            Session::flash('message', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
+            return back()->withInput($request->all())->withErrors($validation);
+        }
+
+        // #5
+        $luput = $request->get('tarikh_warta')->addYear()->yesterday();
+        dd($luput);
 
         $warta = new Warta;
 
@@ -76,13 +93,18 @@ class WartaController extends Controller
         $warta->id_fasa         =   $request->get('fasa');
         $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
-        $warta->tarikh_luput    =   $request->get('tarikh_luput');
+        $warta->tarikh_luput    =   $luput;
         $warta->jilid_warta     =   $request->get('jilid');
         $warta->no_warta        =   $request->get('no_warta');
         $warta->rujukan         =   $request->get('rujukan');
         $warta->catatan         =   $request->get('catatan');
 
-        $warta->save();
+
+
+        if($warta->save()) {
+            Session::flash('message', 'Warta telah disimpan');
+        }
+
 
         return redirect()->route('warta.index');
         // dd('hehehe');

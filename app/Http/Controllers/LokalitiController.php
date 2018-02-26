@@ -10,7 +10,7 @@ class LokalitiController extends Controller
 {
     public function index()
     {
-    	$lokaliti = Lokaliti::all();
+    	$lokaliti = Lokaliti::paginate(10);
     	return view('lokaliti.index',compact('lokaliti'));
     }
 

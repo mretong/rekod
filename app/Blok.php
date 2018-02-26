@@ -20,4 +20,5 @@ class Blok extends Model
     {
     	return $this->belongsToMany('App\Lokaliti','blok_lokaliti','blok_id','lokaliti_id');
     }
+    
 }

@@ -6,6 +6,9 @@
 <h1>Warta Menu</h1>
 
 <hr />
+@include('includes._session_errors')
+@include('includes._form_errors')
+
 <a href="{{ route('warta.create') }}" class="btn btn-warning" style="float: right"><b>Tambah</b></a>
 &nbsp
 <hr />
@@ -25,8 +28,8 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $news->blok->nama }} </td>
 		<td><center>{{ $news->no_warta }}</td>
-		<td><center>{{ $news->tarikh_warta }}</td>
-		<td><center>{{ $news->tarikh_luput }}</td>
+		<td><center>{{ $news->tarikh_warta->format('d-m-Y') }}</td>
+		<td><center>{{ $news->tarikh_luput->format('d-m-Y') }}</td>
 		<div class="form-group row">
 		<td>
 				{!! Form::open(['route' => ['warta.destroy', $news->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}

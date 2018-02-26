@@ -37,6 +37,9 @@
 					</script>		
 	</tr>
 	@endforeach
-
+	<tr>
+		<td colspan="5" align="center">{!! $lokaliti->render() !!}</td>
+	</tr>
 </table>
+
 @endsection
