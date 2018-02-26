@@ -85,7 +85,7 @@ class WartaController extends Controller
 
         // #5
         $luput = $request->get('tarikh_warta')->addYear()->yesterday();
-        dd($luput);
+        //dd($luput);
 
         $warta = new Warta;
 
