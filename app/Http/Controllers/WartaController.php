@@ -59,23 +59,21 @@ class WartaController extends Controller
         // #3
         $validation = Validator::make($request->all(), [
             'blok'              => 'required',
-            'fasa'              => 'required',
             'pakej'             => 'required',
             'tarikh_warta'      => 'required',
-            'tarikh_luput'      => 'required',
             'jilid'             => 'required|min:2',
             'no_warta'          => 'required|min:2',
             
         ]);
 
         // #4
-        $warta = Warta::where('no_jilid', $request->get('no_jilid'))
-                    ->where('no_warta', $request->get('no_warta'))
-                    ->get();
-        if(!empty($warta)) {
-            Session::flash('message', 'No Jilid dan No Warta telah wujud');
-            return back()->withInput();
-        }
+        // $warta = Warta::where('jilid_warta', $request->get('jilid_warta'))
+        //             ->where('no_warta', $request->get('no_warta'))
+        //             ->get();
+        // if(!empty($warta)) {
+        //     Session::flash('message', 'No Jilid dan No Warta telah wujud.');
+        //     return back()->withInput();
+        // }
 
 
         if($validation->fails()){
@@ -90,7 +88,6 @@ class WartaController extends Controller
         $warta = new Warta;
 
         $warta->id_blok         =   $request->get('blok');
-        $warta->id_fasa         =   $request->get('fasa');
         $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
         $warta->tarikh_luput    =   $luput;
@@ -102,7 +99,7 @@ class WartaController extends Controller
 
 
         if($warta->save()) {
-            Session::flash('message', 'Warta telah disimpan');
+            Session::flash('message', 'Maklumat Warta telah berjaya disimpan.');
         }
 
 
