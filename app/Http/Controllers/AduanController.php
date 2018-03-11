@@ -30,6 +30,7 @@ class AduanController extends Controller
     {
     	$aduan = new Aduan;
 
+        $aduan->id_blok         = $request->get('nama');
     	$aduan->no_aduan		= $request->get('aduan');
     	$aduan->tarikh_terima	= $request->get('tarikh_terima');
     	$aduan->tarikh_selesai	= $request->get('tarikh_selesai');

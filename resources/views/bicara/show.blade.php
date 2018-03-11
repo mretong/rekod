@@ -25,7 +25,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('nama', 'Nama Pentadbir',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('no_pekerja', $staf, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_staff', $staff, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

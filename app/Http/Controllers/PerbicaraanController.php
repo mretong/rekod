@@ -21,7 +21,7 @@ class PerbicaraanController extends Controller
 
     public function create()
     {
-    	$staff 	= 	Staff::pluck('nama','no_pekerja');
+    	$staff 	= 	Staff::pluck('nama','id');
     	$lot 	=	Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id');
@@ -40,7 +40,7 @@ class PerbicaraanController extends Controller
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
     	$bicara->id_lot				=	$request->get('id_lot');
         $bicara->id_blok            =   $request->get('id_blok');
-    	$bicara->no_pekerja    		=	$request->get('no_pekerja');
+    	$bicara->id_staff    		=	$request->get('id_staff');
     	$bicara->status				=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');
     	$bicara->pampasan			=	$request->get('pampasan');

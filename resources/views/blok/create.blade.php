@@ -10,7 +10,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('nama', 'Nama Blok', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('nama','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::text('id_blok','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

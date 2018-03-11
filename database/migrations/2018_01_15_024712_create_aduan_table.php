@@ -19,7 +19,7 @@ class CreateAduanTable extends Migration
             $table->date('tarikh_terima');
             $table->date('tarikh_selesai');
             $table->string('masa_terima');
-            $table->integer('no_pekerja');
+            $table->integer('id_staff');
             $table->integer('id_lot');
             $table->integer('id_blok');
             $table->string('no_hakmilik');
