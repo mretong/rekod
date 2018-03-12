@@ -200,3 +200,10 @@ Route::resource('ptj','PtjController');
 |#######################################|
 */
 Route::resource('status_blok','StatusBlokController');
+
+/*
+|#######################################|
+|			  carian data              #|
+|#######################################|
+*/
+Route::resource('search','SearchController');
