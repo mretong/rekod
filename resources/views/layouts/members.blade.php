@@ -43,7 +43,10 @@
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="{{route('aduan.index')}}">Aduan <span class="sr-only"></span></a>
-          </li>          
+          </li>        
+          <li class="nav-item active">
+            <a class="nav-link" href="{{route('aduan.index')}}">Carian <span class="sr-only"></span></a>
+          </li>      
           <li class="nav-item active">
             <a class="nav-link" href="{{route('setting.index')}}">Tetapan Sistem <span class="sr-only"></span></a>
           </li>

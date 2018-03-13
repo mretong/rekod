@@ -9,9 +9,7 @@ class BankController extends Controller
 {
     public function index()
     {
-    	$bank = Bank::all();
-    	//dd($bank);
-
+    	$bank = Bank::paginate(10);
     	return view('bank.index',compact('bank'));
     }
 

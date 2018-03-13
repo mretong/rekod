@@ -9,7 +9,7 @@ class PtjController extends Controller
 {
     public function index()
     {
-    	$ptj = Ptj::all();
+    	$ptj = Ptj::paginate(10);
     	return view('ptj.index',compact('ptj'));
     }
 

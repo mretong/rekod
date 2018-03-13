@@ -42,6 +42,9 @@
 					</script>		
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center"> {!! $daerah->render() !!} </td>
+	</tr>
 
 </table>
 

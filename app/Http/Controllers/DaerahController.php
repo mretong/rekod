@@ -10,8 +10,7 @@ class DaerahController extends Controller
 {
     public function index()
     {
-    	$daerah = Daerah::all();
-        // $negeri = Negeri::all();
+    	$daerah = Daerah::paginate(10);
     	return view('daerah.index',compact('daerah','negeri'));
     }
 

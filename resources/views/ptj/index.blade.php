@@ -40,6 +40,9 @@
 				</script>		
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center">{!! $ptj->render() !!}</td>
+	</tr>
 
 </table>
 

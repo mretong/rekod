@@ -12,7 +12,7 @@ class BlokController extends Controller
 {
     public function index()
     {
-    	$blok = Blok::all();
+    	$blok = Blok::paginate(10);
 
     	return view('blok.index',compact('blok'));
     }
