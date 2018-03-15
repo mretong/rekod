@@ -206,4 +206,6 @@ Route::resource('status_blok','StatusBlokController');
 |			  carian data              #|
 |#######################################|
 */
-Route::resource('search','SearchController');
+Route::resource('carian','SearchController');
+
+Route::post('/ajax','SearchController@getNoLot')->name('ajax');
