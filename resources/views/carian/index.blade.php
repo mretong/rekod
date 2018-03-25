@@ -10,7 +10,7 @@
 
 <table class="table table-bordered table-striped">
 	<tr>
-		{!! Form::open(['route' => 'ajax']) !!}
+		{!! Form::open(['route' => 'carian.index']) !!}
 
                         <div class="form-group row">
                             {!! Form::label('blok', 'Blok', ['class'=>'form control col-sm-2']) !!}
