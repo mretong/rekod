@@ -11,7 +11,7 @@ class BorangKController extends Controller
 {
     public function index()
     {
-    	$borangk = BorangK::all();
+    	$borangk = BorangK::paginate(10);
     	return view('borangk.index',compact('borangk'));
     }
 

@@ -8,7 +8,7 @@ class Perbicaraan extends Model
 {
     protected $table = 'perbicaraan';
     protected $primaryKey = 'id';
-    protected $fillable = ['tarikh_1','tarikh_2','tarikh_3','tarikh_4','tarikh_5','id_lot','id_blok','no_pekerja','status','bilangan','pampasan','kos_lain','catatan','jajaran'];
+    protected $fillable = ['tarikh_1','tarikh_2','tarikh_3','tarikh_4','tarikh_5','id_lot','id_blok','id_staff','id_status','bilangan','pampasan','kos_lain','catatan','jajaran'];
     public $timestamps = false;
 
     public function lot()
@@ -18,11 +18,11 @@ class Perbicaraan extends Model
 
     public function staff()
     {
-        return $this->belongsTo('App\Staff','no_pekerja','id');
+        return $this->belongsTo('App\Staff','id_staff','id');
     }
 
     public function status()
     {
-        return $this->belongsTo('App\StatusBicara','status','id');
+        return $this->belongsTo('App\StatusBicara','id_status','id');
     }
 }

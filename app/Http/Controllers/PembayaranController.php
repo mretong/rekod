@@ -14,8 +14,10 @@ class PembayaranController extends Controller
 {
     public function index()
     {
-    	$bayar = Pembayaran::all();
-    	return view('pembayaran.index',compact('bayar'));
+    	$bayar = Pembayaran::paginate(10);
+        $pemilik = DB::table('pemilik','pembayaran')
+            ->join()
+    	return view('pembayaran.index',compact('bayar','pemilik'));
     }
 
     public function create()

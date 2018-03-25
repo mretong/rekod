@@ -13,6 +13,11 @@ class Pemilik extends Model
 
     public function lot()
     {
-    	return $this->belongsToMany('App\Lot','lot_pemilik','id_lot','id_pemilik');
+    	return $this->belongsTo('App\Lot','id_lot','id');
+    }
+
+    public function blok()
+    {
+    	return $this->belongsTo('App\Blok','id_blok','id');
     }
 }

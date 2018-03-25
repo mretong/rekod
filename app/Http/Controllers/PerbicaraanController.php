@@ -13,7 +13,7 @@ class PerbicaraanController extends Controller
 {
     public function index()
     {
-    	$bicara = Perbicaraan::all();
+    	$bicara = Perbicaraan::paginate(10);
         // $staf   = Staff::all();
     	// dd('here');
     	return view ('bicara.index',compact('bicara'));

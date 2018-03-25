@@ -23,8 +23,8 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $hears->lot->no_hakmilik }} - {{$hears->lot->no_lot}} </td>
-		<td><center>{{ $hears->no_pekerja }} </td>
-		<td><center>{{ $hears->status }}</td>
+		<td><center>{{ $hears->staff->nama }} </td>
+		<td><center>{{ $hears->status->nama }}</td>
 		
 		<td>
 				{!! Form::open(['route' => ['bicara.destroy', $hears->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
@@ -43,6 +43,9 @@
 			
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center"> {!! $bicara->render() !!} </td>
+	</tr>
 
 </table>
 

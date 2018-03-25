@@ -48,6 +48,9 @@
 			
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center"> {!! $warta->render() !!} </td>
+	</tr>
 
 </table>
 

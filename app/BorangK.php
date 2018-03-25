@@ -11,4 +11,14 @@ class BorangK extends Model
     protected $fillable = ['id_blok','id_lot','tarikh_k','rujukan_k','rujukan_fail','attachment'];
 
     public $timestamps = false;
+
+    public function blok()
+    {
+    	return $this->belongsTo('App\Blok','id_blok','id');
+    }
+
+    public function lot()
+    {
+    	return $this->belongsTo('App\Lot','id_lot','id');
+    }
 }

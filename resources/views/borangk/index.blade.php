@@ -21,8 +21,8 @@
 	@foreach($borangk as $formk)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $formk->id_blok }}</td>
-		<td><center>{{ $formk->id_lot }}</td>
+		<td><center>{{ $formk->blok->nama }}</td>
+		<td><center>{{ $formk->lot->no_lot }}</td>
 		<td><center>{{ $formk->tarikh_k }}</td>
 		
 		<td>
@@ -42,5 +42,8 @@
 			
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center"> {!! $borangk->render() !!} </td>
+	</tr>
 
 @endsection

@@ -21,7 +21,7 @@ class WartaController extends Controller
 {
     public function index()
     {
-    	$warta = Warta::all();
+    	$warta = Warta::paginate(10);
        	return view('warta.index',compact('warta'));
     }
 

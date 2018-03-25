@@ -12,7 +12,7 @@ class BorangHController extends Controller
 {
     public function index()
     {
-    	$borangh 	=	Pemilik::all();
+    	$borangh 	=	Pemilik::paginate(10);
     	//dd($borangh);
     	return view('borangh.index',compact('borangh'));
     }

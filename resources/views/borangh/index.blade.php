@@ -23,8 +23,8 @@
 	@foreach($borangh as $form)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $form->id_lot }}</td>
-		<td><center>{{ $form->id_blok }}</td>
+		<td><center>{{ $form->lot->no_lot }}</td>
+		<td><center>{{ $form->blok->nama }}</td>
 		<td><center>{{ $form->no_kp }}</td>
 		<td><center>{{ $form->nama }}</td>
 		
@@ -48,5 +48,8 @@
 			
 	</tr>
 	@endforeach
+	<tr>
+		<td colspan="5" align="center"> {!! $borangh->render() !!} </td>
+	</tr>
 
 @endsection

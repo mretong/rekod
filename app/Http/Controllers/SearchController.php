@@ -7,6 +7,10 @@ use App\Pemilik;
 
 class SearchController extends Controller
 {
+	// public function __construct(){
+	// 	$this->beforeFilter('auth', array('except'=>'getLogin'));
+	// }
+
 	public function index(){
 		// dd('here');
 		return view('carian.index');
@@ -18,5 +22,6 @@ class SearchController extends Controller
     	return response()->json(array('msg'=>$msg),200);
     }
 
+    
 
 }

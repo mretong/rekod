@@ -14,19 +14,19 @@
 
 <table class="table table-bordered table-striped">
 	<tr>
-		<td>{!! Form::label('bil', 'Bil.') !!}</td>
-		<td>{!! Form::label('pemilik', 'Nama Pemilik') !!}</td>
-		<td>{!! Form::label('no_kp', 'No. K/Pengenalan') !!}</td>
-		<td>{!! Form::label('sb', 'Status Pembayaran') !!}</td>
-		<td>{!! Form::label('pilih', 'Pilihan') !!}</td>
+		<td><center>{!! Form::label('bil', 'Bil.') !!}</td>
+		<td><center>{!! Form::label('pemilik', 'Nama Pemilik') !!}</td>
+		<td><center>{!! Form::label('no_kp', 'No. K/Pengenalan') !!}</td>
+		<td><center>{!! Form::label('sb', 'Status Pembayaran') !!}</td>
+		<td><center>{!! Form::label('pilih', 'Pilihan') !!}</td>
 	</tr>
 
 	@foreach($bayar as $pay)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $pay->id_pemilik }}</td>
-		<td><center>{{ $pay->kod }}</td>
-		<td><center>{{ $pay->status }}</td>
+		<td><center>{{ $pay->id_pemilik }} </td>
+		<td><center>{{ $pay->pemilik->id }}</td>
+		<td><center>{{ $pay->status->nama }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}
@@ -35,9 +35,9 @@
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
 	</tr>
 	@endforeach
-
+	<tr>
+		<td colspan="5" align="center"> {!! $bayar->render() !!} </td>
+	</tr>
 </table>
 
 @endsection
-
-<!-- , ['class'=>'form control col-sm-2'] -->
