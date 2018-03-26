@@ -23,7 +23,7 @@ class Pembayaran extends Model
 
     public function pemilik()
     {
-    	return $this->belongsToMany('App\Pemilik','id_pemilik','id');
+    	return $this->belongsTo('App\Pemilik','id_pemilik','id');
     }
 
     public function perbicaraan()

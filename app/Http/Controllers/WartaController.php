@@ -66,20 +66,19 @@ class WartaController extends Controller
             
         ]);
 
-        // #4
-        // $warta = Warta::where('jilid_warta', $request->get('jilid_warta'))
-        //             ->where('no_warta', $request->get('no_warta'))
-        //             ->get();
-        // if(!empty($warta)) {
-        //     Session::flash('message', 'No Jilid dan No Warta telah wujud.');
-        //     return back()->withInput();
-        // }
-
-
         if($validation->fails()){
             Session::flash('message', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
             return back()->withInput($request->all())->withErrors($validation);
         }
+
+        #4
+        $warta = Warta::where('jilid_warta', $request->get('jilid_warta'))
+                    ->where('no_warta', $request->get('no_warta'))
+                    ->get();
+        if(!empty($warta)) {
+            Session::flash('message', 'No Jilid dan No Warta telah wujud.');
+            return back()->withInput();
+        }    
 
         // #5
         $luput = $request->get('tarikh_warta')->addYear()->yesterday();
@@ -128,14 +127,15 @@ class WartaController extends Controller
 
     public function update($id, Request $request)
     {
+        // $luput = $request->get('tarikh_warta')->addYear()->yesterday();
+
         $warta = Warta::find($id);
 
-        $warta->id_blok         =   $request->get('id_blok');
-        $warta->id_fasa         =   $request->get('id_fasa');
-        $warta->id_pakej        =   $request->get('id_pakej');
+        $warta->id_blok         =   $request->get('blok');
+        $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
         $warta->tarikh_luput    =   $request->get('tarikh_luput');
-        $warta->jilid_warta     =   $request->get('jilid_warta');
+        $warta->jilid_warta     =   $request->get('jilid');
         $warta->no_warta        =   $request->get('no_warta');
         $warta->rujukan         =   $request->get('rujukan');
         $warta->catatan         =   $request->get('catatan');

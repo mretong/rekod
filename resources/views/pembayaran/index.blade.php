@@ -24,15 +24,36 @@
 	@foreach($bayar as $pay)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $pay->id_pemilik }} </td>
-		<td><center>{{ $pay->pemilik->id }}</td>
+		<td><center>{{ $pay->pemilik->nama }} </td>
+		<td><center>{{ $pay->pemilik->no_kp }}</td>
 		<td><center>{{ $pay->status->nama }}</td>
 		
-		<td><center>
+		<td>
+			<form class="form-inline"> 
+
+				<a href="{{ route('logout') }}"
+	                onclick="event.preventDefault();
+	                         document.getElementById('logout-form').submit();">
+	                <center>Logout
+	            </a>
+
+	            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+	                {{ csrf_field() }}
+	            </form>
+
+	            <a href="{{ route('pembayaran.destroy', $pay->id) }}">Buang</a>
+
 				{!! Form::open(['route' => ['pembayaran.destroy', $pay->id], 'method' => 'delete']) !!}
-					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}{!! Form::close() !!}
+					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}
+				{!! Form::close() !!}
 				{!! Form::open(['route' => ['pembayaran.show', $pay->id], 'method' => 'get']) !!}
-					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}{!! Form::close() !!}		
+					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}
+				{!! Form::close() !!}
+
+
+			</form>
+
+		</td>
 	</tr>
 	@endforeach
 	<tr>

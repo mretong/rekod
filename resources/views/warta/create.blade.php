@@ -6,7 +6,7 @@
 <hr />
 
 @include('includes._session_errors')
-@include('includes._form_errors')
+<!-- @include('includes._form_errors') -->
 
 
 
@@ -15,12 +15,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('blok', $blok, 'Sila Pilih', ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('blok', $blok, 'Sila Pilih', ['class'=>'form-control col-sm-6', 'placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('pakej', 'Pakej', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('pakej',$pakej, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('pakej',$pakej, null, ['class'=>'form-control col-sm-6', 'placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -28,10 +28,10 @@
 		{!! Form::date('tarikh_warta', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
-	<div class="form-group row">
+	<!-- <div class="form-group row">
 		{!! Form::label('tarikh_luput', 'Tarikh Luput', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::date('tarikh_luput', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
-	</div>
+	</div> -->
 
 	<div class="form-group row">
 		{!! Form::label('jilid', 'Jilid Warta', ['class'=>'form control col-sm-2']) !!}
