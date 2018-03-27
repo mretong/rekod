@@ -20,10 +20,17 @@ class CreatePerbicaraanTable extends Migration
             $table->date('tarikh_3')->nullable();
             $table->date('tarikh_4')->nullable();
             $table->date('tarikh_5')->nullable();
+            $table->integer('id_daerah');
+            $table->integer('id_mukim');
             $table->integer('id_lot');
             $table->integer('id_blok');
             $table->string('id_staff');
             $table->integer('id_status');
+            $table->integer('bil_pemilik');
+            $table->float('luas_ambil',8,4);
+            $table->float('harga_tanah',8,2);
+            $table->integer('wakil_mada');
+            $table->integer('wakil_jps');
             $table->string('bilangan');
             $table->float('pampasan',8,2);
             $table->float('kos_lain',8,2);

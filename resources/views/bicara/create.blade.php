@@ -2,12 +2,22 @@
 
 @section('content')
 
-<h1>Add Perbicaraan</h1>
+<h1>Tambah Perbicaraan</h1>
 <hr />
 
 
 {!! Form::open(['route' => 'bicara.store']) !!}
 	
+	<div class="form-group row">
+		{!! Form::label('daerah', 'Daerah',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_daerah', $daerah, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('mukim', 'Mukim',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_mukim', $mukim, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('id_blok', $blok, null, ['class'=>'form-control col-sm-6']) !!}
@@ -39,12 +49,12 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('luas_ambil', 'Luas Diambil(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::label('luas', 'Luas Diambil(Ha)', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('luas_ambil','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('harga', 'Harga/(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::label('price', 'Harga/(Ha)', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('harga','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
@@ -61,6 +71,16 @@
 	<div class="form-group row">
 		{!! Form::label('kosLain', 'Lain-lain Kos RM:', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('kos_lain','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('mada', 'Wakil MADA',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('wakil_mada', $staff, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('jps', 'Wakil JPS',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('wakil_jps', $staff, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

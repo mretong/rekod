@@ -18,6 +18,9 @@ class CreateBorangKTable extends Migration
             $table->integer('id_blok');
             $table->integer('id_lot');
             $table->date('tarikh_k');
+            $table->date('tarikh_terima');
+            $table->string('rujukan_jkptg');
+            $table->string('rujukan_jps');
             $table->string('rujukan_k');
             $table->string('rujukan_fail');
             $table->string('attachment')->nullable();

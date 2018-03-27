@@ -8,6 +8,8 @@ use App\Staff;
 use App\Lot;
 use App\StatusBicara;
 use App\Blok;
+use App\Daerah;
+use App\Mukim;
 
 class PerbicaraanController extends Controller
 {
@@ -25,25 +27,34 @@ class PerbicaraanController extends Controller
     	$lot 	=	Lot::pluck('no_lot','id');
         $sb     =   StatusBicara::pluck('nama','id');
         $blok   =   Blok::pluck('nama','id');
+        $daerah =   Daerah::pluck('nama','id');
+        $mukim  =   Mukim::pluck('nama','id');
     	//dd($staf);
-    	return view('bicara.create',compact('staff', 'lot','sb','blok'));
+    	return view('bicara.create',compact('staff', 'lot','sb','blok','daerah','mukim'));
     }
 
     public function store(Request $request)
     {
     	$bicara = new Perbicaraan;
 
-    	$bicara->tarikh_1			=	$request->get('tarikh_1');
+        $bicara->tarikh_1			=	$request->get('tarikh_1');
     	$bicara->tarikh_2			=	$request->get('tarikh_2');
     	$bicara->tarikh_3			=	$request->get('tarikh_3');
     	$bicara->tarikh_4			=	$request->get('tarikh_4');
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
-    	$bicara->id_lot				=	$request->get('id_lot');
+        $bicara->id_daerah          =   $request->get('id_daerah');
+        $bicara->id_mukim           =   $request->get('id_mukim');
+        $bicara->id_lot             =   $request->get('id_lot');
         $bicara->id_blok            =   $request->get('id_blok');
     	$bicara->id_staff    		=	$request->get('id_staff');
     	$bicara->id_status			=	$request->get('status');
+        $bicara->bil_pemilik        =   $request->get('tuan_tanah');
+        $bicara->luas_ambil         =   $request->get('luas_ambil');
+        $bicara->harga_tanah        =   $request->get('harga');
+        $bicara->wakil_mada         =   $request->get('wakil_mada');
+        $bicara->wakil_jps          =   $request->get('wakil_jps');
     	$bicara->bilangan			=	$request->get('bilangan');
-    	$bicara->pampasan			=	$request->get('pampasan');
+        $bicara->pampasan			=	$request->get('pampasan');
     	$bicara->kos_lain			=	$request->get('kos_lain');
     	$bicara->catatan			=	$request->get('catatan');
     	$bicara->jajaran			=	$request->get('jajaran');
