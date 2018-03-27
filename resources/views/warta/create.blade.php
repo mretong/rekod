@@ -28,10 +28,10 @@
 		{!! Form::date('tarikh_warta', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
-	<!-- <div class="form-group row">
+	<div class="form-group row">
 		{!! Form::label('tarikh_luput', 'Tarikh Luput', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::date('tarikh_luput', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
-	</div> -->
+	</div>
 
 	<div class="form-group row">
 		{!! Form::label('jilid', 'Jilid Warta', ['class'=>'form control col-sm-2']) !!}

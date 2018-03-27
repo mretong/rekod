@@ -46,7 +46,7 @@ class PembayaranController extends Controller
     	$bayar->tarikh_cek 		= $request->get('tarikh_cek');
     	$bayar->rujukan 		= $request->get('rujukan');
     	$bayar->catatan 		= $request->get('catatan');
-    	$bayar->status 			= $request->get('status');
+    	$bayar->id_status		= $request->get('status');
     	$bayar->rujukan_denda 	= $request->get('rujukan_denda');
     	$bayar->tarikh_denda	= $request->get('tarikh_denda');
 

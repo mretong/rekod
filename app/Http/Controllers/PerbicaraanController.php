@@ -41,7 +41,7 @@ class PerbicaraanController extends Controller
     	$bicara->id_lot				=	$request->get('id_lot');
         $bicara->id_blok            =   $request->get('id_blok');
     	$bicara->id_staff    		=	$request->get('id_staff');
-    	$bicara->status				=	$request->get('status');
+    	$bicara->id_status			=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');
     	$bicara->pampasan			=	$request->get('pampasan');
     	$bicara->kos_lain			=	$request->get('kos_lain');
@@ -83,7 +83,7 @@ class PerbicaraanController extends Controller
     	$bicara->tarikh_5			=	$request->get('tarikh_5');
     	$bicara->id_lot				=	$request->get('id_lot');
     	$bicara->no_pekerja    		=	$request->get('no_pekerja');
-    	$bicara->status				=	$request->get('status');
+    	$bicara->id_status			=	$request->get('status');
     	$bicara->bilangan			=	$request->get('bilangan');
     	$bicara->pampasan			=	$request->get('pampasan');
     	$bicara->kos_lain			=	$request->get('kos_lain');

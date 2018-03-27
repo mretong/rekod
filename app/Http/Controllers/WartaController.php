@@ -39,71 +39,86 @@ class WartaController extends Controller
 
     public function store(Request $request)
     {
-        // #1
-        if(Auth::user()->status == 0) {
-            Session::flush();
-            Session::flash('message', 'Ralat.');
-            Auth::logout();
-            return redirect()->route('login');
-        }
+        // // #1
+        // if(Auth::user()->status == 0) {
+        //     Session::flush();
+        //     Session::flash('message', 'Ralat.');
+        //     Auth::logout();
+        //     return redirect()->route('login');
+        // }
 
-        // #2
-        $no_warta = $request->get('no_warta');
-        $warta = Warta::where('no_warta', $no_warta)->get();
+        // // #2
+        // $no_warta = $request->get('no_warta');
+        // $warta = Warta::where('no_warta', $no_warta)->get();
 
-        if(empty($warta)) {
-            Session::flash('message', 'No Warta telah wujud.');
-            return redirect('warta.index');
-        }
+        // if(empty($warta)) {
+        //     Session::flash('message', 'No Warta telah wujud.');
+        //     return redirect('warta.index');
+        // }
 
-        // #3
-        $validation = Validator::make($request->all(), [
-            'blok'              => 'required',
-            'pakej'             => 'required',
-            'tarikh_warta'      => 'required',
-            'jilid'             => 'required|min:2',
-            'no_warta'          => 'required|min:2',
+        // // #3
+        // $validation = Validator::make($request->all(), [
+        //     'blok'              => 'required',
+        //     'pakej'             => 'required',
+        //     'tarikh_warta'      => 'required',
+        //     'jilid'             => 'required|min:2',
+        //     'no_warta'          => 'required|min:2',
             
-        ]);
+        // ]);
 
-        if($validation->fails()){
-            Session::flash('message', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
-            return back()->withInput($request->all())->withErrors($validation);
-        }
+        // if($validation->fails()){
+        //     Session::flash('message', 'Ruangan Blok, Fasa, Pakej, Tarikh Warta, Tarikh Luput, Jilid Warta dan No. Warta adalah wajib diisi.');
+        //     return back()->withInput($request->all())->withErrors($validation);
+        // }
 
-        //#4
-        $warta = Warta::where('jilid_warta', $request->get('jilid'))
-                    ->where('no_warta', $request->get('no_warta'))
-                    ->get();
-        if(!empty($warta)) {
-            Session::flash('message', 'No Jilid dan No Warta telah wujud.');
-            return back()->withInput();
-        }    
+        // //#4
+        // $warta = Warta::where('jilid_warta', $request->get('jilid'))
+        //             ->where('no_warta', $request->get('no_warta'))
+        //             ->get();
+        // if(!empty($warta)) {
+        //     Session::flash('message', 'No Jilid dan No Warta telah wujud.');
+        //     return back()->withInput();
+        // }    
 
-        // #5
-        $luput = $request->get('tarikh_warta')->addYear()->yesterday();
-        //dd($luput);
+        // // #5
+        // $luput = $request->get('tarikh_warta')->addYear()->yesterday();
+        // //dd($luput);
+
+        // $warta = new Warta;
+
+        // $warta->id_blok         =   $request->get('blok');
+        // $warta->id_pakej        =   $request->get('pakej');
+        // $warta->tarikh_warta    =   $request->get('tarikh_warta');
+        // $warta->tarikh_luput    =   $luput;
+        // $warta->jilid_warta     =   $request->get('jilid');
+        // $warta->no_warta        =   $request->get('no_warta');
+        // $warta->rujukan         =   $request->get('rujukan');
+        // $warta->catatan         =   $request->get('catatan');
+
+
+
+        // if($warta->save()) {
+        //     Session::flash('message', 'Maklumat Warta telah berjaya disimpan.');
+        // }
+
+
+        // return redirect()->route('warta.index');
+        // // dd('hehehe');
 
         $warta = new Warta;
 
         $warta->id_blok         =   $request->get('blok');
         $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
-        $warta->tarikh_luput    =   $luput;
+        $warta->tarikh_luput    =   $request->get('tarikh_luput');
         $warta->jilid_warta     =   $request->get('jilid');
         $warta->no_warta        =   $request->get('no_warta');
         $warta->rujukan         =   $request->get('rujukan');
         $warta->catatan         =   $request->get('catatan');
 
-
-
-        if($warta->save()) {
-            Session::flash('message', 'Maklumat Warta telah berjaya disimpan.');
-        }
-
+        $warta->save();
 
         return redirect()->route('warta.index');
-        // dd('hehehe');
 
     }
 

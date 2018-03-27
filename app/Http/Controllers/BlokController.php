@@ -29,7 +29,7 @@ class BlokController extends Controller
     {
     	$blok = new Blok;
 
-    	$blok->nama 			= $request->get('nama');
+    	$blok->nama 			= $request->get('id_blok');
     	$blok->jum_lot_total	= $request->get('jum_lot_total');
         $blok->anggaran_kos     = $request->get('anggaran_kos');
     	$blok->id_lokaliti		= $request->get('id_lokaliti');
