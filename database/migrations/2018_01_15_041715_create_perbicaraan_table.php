@@ -23,7 +23,7 @@ class CreatePerbicaraanTable extends Migration
             $table->integer('id_lot');
             $table->integer('id_blok');
             $table->string('id_staff');
-            $table->integer('status');
+            $table->integer('id_status');
             $table->string('bilangan');
             $table->float('pampasan',8,2);
             $table->float('kos_lain',8,2);

@@ -26,7 +26,7 @@ class CreatePembayaranTable extends Migration
             $table->date('tarikh_cek');
             $table->string('rujukan')->nullable();
             $table->string('catatan')->nullable();
-            $table->integer('status');
+            $table->integer('id_status');
             $table->string('rujukan_denda')->nullable();
             $table->date('tarikh_denda')->nullable();
             $table->string('attachment')->nullable();
