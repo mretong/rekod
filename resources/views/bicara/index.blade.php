@@ -13,7 +13,7 @@
 <table class="table table-bordered table-striped">
 	<tr>
 		<td><center>Bil</td>
-		<td><center>Hakmilik & No. Lot</td>
+		<td><center>No. Lot & Hakmilik</td>
 		<td><center>Nama Pentadbir</td>
 		<td><center>Status</td>
 		<td><center>Pilihan</td>
@@ -22,7 +22,7 @@
 	@foreach($bicara as $hears)
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
-		<td><center>{{ $hears->lot->no_hakmilik }} - {{$hears->lot->no_lot}} </td>
+		<td><center>{{ $hears->lot->no_lot }} - {{$hears->lot->no_hakmilik}} </td>
 		<td><center>{{ $hears->staff->nama }} </td>
 		<td><center>{{ $hears->status->nama }}</td>
 		

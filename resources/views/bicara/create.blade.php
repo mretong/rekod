@@ -34,8 +34,23 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('bilangan', 'Bilangan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::label('bilangan', 'Bil. Perbicaraan', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('bilangan','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('luas_ambil', 'Luas Diambil(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('luas_ambil','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('harga', 'Harga/(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('harga','',['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('bil_tuan', 'Bil. Tuan Tanah', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('tuan_tanah','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
