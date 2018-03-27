@@ -71,8 +71,8 @@ class WartaController extends Controller
             return back()->withInput($request->all())->withErrors($validation);
         }
 
-        #4
-        $warta = Warta::where('jilid_warta', $request->get('jilid_warta'))
+        //#4
+        $warta = Warta::where('jilid_warta', $request->get('jilid'))
                     ->where('no_warta', $request->get('no_warta'))
                     ->get();
         if(!empty($warta)) {
