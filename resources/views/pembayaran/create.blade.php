@@ -9,8 +9,19 @@
 {!! Form::open(['route' => 'pembayaran.store']) !!}
 
 	<div class="form-group row">
-		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
+		&nbsp&nbsp&nbsp&nbsp
+		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('pemilik', 'Kategori Pampasan', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
+		&nbsp&nbsp&nbsp&nbsp
+		{!! Form::label('pemilik', 'Jumlah', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::text('no_akaun','',['class'=>'form-control col-sm-4']) !!}
 	</div>
 
 	<div class="form-group row">
