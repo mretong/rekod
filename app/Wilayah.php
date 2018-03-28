@@ -10,4 +10,9 @@ class Wilayah extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['id_daerah','nama','kod'];
     public $timestamps = false;
+
+    public function daerah()
+    {
+    	return $this->belongsTo('App\Daerah','id_daerah','id');
+    }
 }

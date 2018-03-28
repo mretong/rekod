@@ -15,4 +15,8 @@ class Lokaliti extends Model
     {
     	return $this->belongToMany('App\Blok','blok_lokaliti','id_blok','id_lokaliti');
     }
+
+    public function wilayah(){
+    	return $this->belongsTo('App\Wilayah','id_wilayah','id');
+    }
 }

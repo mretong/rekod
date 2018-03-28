@@ -20,10 +20,17 @@ class AduanController extends Controller
     public function create()
     {
     	$staff = Staff::pluck('nama','no_pekerja');
-    	$lot = Lot::pluck('no_lot','no_hakmilik','id');
     	$sa = StatusAduan::pluck('nama','id');
         $blok = Blok::pluck('nama','id');
-    	return view('aduan.create',compact('staff','lot','sa','blok'));
+
+        $lots = Lot::all();
+        $dataLot = collect();
+
+        foreach($lots as $lot) {
+            $dataLot = $dataLot->union([$lot->id => $lot->no_lot . ' - ' . $lot->no_hakmilik]);
+        }
+        
+    	return view('aduan.create',compact('staff','dataLot','sa','blok'));
     }
 
     public function store(Request $request)

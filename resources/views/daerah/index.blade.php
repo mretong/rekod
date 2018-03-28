@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.members')
 
 
 @section('content')
@@ -25,7 +25,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $district->nama }}</td>
 		<td><center>{{ $district->kod }}</td>
-		<td><center>{{ $district->id_negeri }} </td>
+		<td><center>{{ $district->negeri->nama }} </td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['daerah.destroy', $district->id], 'method' => 'delete', 'onclick'=> 'return myFunction();' ]) !!}

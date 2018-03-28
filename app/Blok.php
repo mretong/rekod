@@ -18,7 +18,10 @@ class Blok extends Model
 
     public function lokaliti()
     {
-    	return $this->belongsTo('App\Lokaliti','id_lokalii','id');
+    	return $this->belongsTo('App\Lokaliti','id_lokaliti','id');
     }
     
+    public function fasa(){
+        return $this->belongsTo('App\Fasa','id_fasa','id');
+    }
 }

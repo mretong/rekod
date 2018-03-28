@@ -25,7 +25,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('masa', 'Masa Terima (24H)', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('masa','',['class'=>'form-control col-sm-6','placeholder'=>'example: 1430H']) !!}
+		{!! Form::time('masa','',['class'=>'form-control col-sm-6','placeholder'=>'example: 1430H']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -40,7 +40,7 @@
 
 	<div class="form-group row">
 		{!! Form::label('lot', 'No.Lot', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_lot',$lot, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_lot',$dataLot, null, ['class'=>'form-control col-sm-6', 'placeholder' => 'Pilih Lot']) !!}
 	</div>
 
 	<div class="form-group row">

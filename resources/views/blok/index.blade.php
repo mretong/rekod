@@ -25,7 +25,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $tersier->nama }}</td>
 		<td><center>{{ $tersier->id_fasa }}</td>
-		<td><center>{{ $tersier->id_lokaliti }}</td>
+		<td><center>{{ $tersier->lokaliti->nama }}</td>
 		
 		<td><center>
 				{!! Form::open(['route' => ['blok.destroy', $tersier->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}

@@ -20,7 +20,7 @@
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $ptj->nama }}</td>
 		<td><center>{{ $ptj->kod }}</td>
-		<td><center>{{ $ptj->id_wilayah }}</td>
+		<td><center>{{ $ptj->wilayah->nama }}</td>
 
 		<td><center>
 				{!! Form::open(['route' => ['lokaliti.destroy', $ptj->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}

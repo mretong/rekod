@@ -24,8 +24,8 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $stay->nama }}</td>
-		<td><center>{{ $stay->id_daerah }}</td>
-		<td><center>{{ $stay->id_wilayah }}</td>
+		<td><center>{{ $stay->daerah->nama }}</td>
+		<td><center>{{ $stay->wilayah->nama }}</td>
 
 		<td><center>
 				{!! Form::open(['route' => ['mukim.destroy', $stay->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}

@@ -8,21 +8,27 @@
 
 {!! Form::open(['route' => 'pembayaran.store']) !!}
 
+<div class="col col-sm-12">
 	<div class="form-group row">
-		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
-		&nbsp&nbsp&nbsp&nbsp
-		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-1']) !!}
+		{!! Form::label('pemilik', 'Pemilik', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
 	</div>
+</div>
+<div class="col col-sm-12">
+	<div class="form-group row">
+		{!! Form::label('pemilik', 'Kategori Pampasan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
+		{!! Form::label('pemilik', 'Jumlah', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::number('jumlah','',['class'=>'form-control col-sm-4', 'min' => '0', 'step' => '0.01']) !!}
+	</div>
+</div>
 
-	<div class="form-group row">
-		{!! Form::label('pemilik', 'Kategori Pampasan', ['class'=>'form control col-sm-1']) !!}
-		{!! Form::select('id_pemilik', $pemilik, null, ['class'=>'form-control col-sm-4']) !!}
-		&nbsp&nbsp&nbsp&nbsp
-		{!! Form::label('pemilik', 'Jumlah', ['class'=>'form control col-sm-1']) !!}
-		{!! Form::text('no_akaun','',['class'=>'form-control col-sm-4']) !!}
-	</div>
+	
+
+
+	
 
 	<div class="form-group row">
 		{!! Form::label('bicara', 'Perbicaraan', ['class'=>'form control col-sm-2']) !!}

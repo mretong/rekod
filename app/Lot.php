@@ -21,4 +21,12 @@ class Lot extends Model
     {
     	return $this->belongsToMany('App\Pemilik','lot_pemilik','id_lot','id_pemilik');
     }
+
+    public function mukim(){
+        return $this->belognsTo('App\Mukim','id_mukim','id');
+    }
+
+    public function blok(){
+        return $this->belongsTo('App\Blok','id_blok','id');
+    }
 }
