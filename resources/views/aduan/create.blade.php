@@ -19,13 +19,13 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('tarikh_selesai', 'Tarikh Selesai', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::label('tarikh_selesai', 'Tarikh Jangka Selesai', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::date('tarikh_selesai', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('masa', 'Masa Terima', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('masa','',['class'=>'form-control col-sm-6']) !!}
+		{!! Form::label('masa', 'Masa Terima (24H)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('masa','',['class'=>'form-control col-sm-6','placeholder'=>'example: 1430H']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -41,11 +41,6 @@
 	<div class="form-group row">
 		{!! Form::label('lot', 'No.Lot', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('id_lot',$lot, null, ['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('hakmilik', 'No. Hak Milik', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('hakmilik','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -66,11 +61,6 @@
 	<div class="form-group row">
 		{!! Form::label('maklumbalas', 'Maklumbalas', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('maklumbalas','',['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
-		{!! Form::label('pemaklum', 'Pemaklum', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('pemaklum','',['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

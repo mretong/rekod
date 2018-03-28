@@ -27,7 +27,6 @@ class CreateAduanTable extends Migration
             $table->string('no_tel');
             $table->string('catatan');
             $table->string('maklumbalas');
-            $table->string('pemaklum');
             $table->integer('status_aduan');
         });
     }

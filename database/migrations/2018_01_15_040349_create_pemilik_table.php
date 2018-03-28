@@ -19,6 +19,12 @@ class CreatePemilikTable extends Migration
             $table->integer('id_lot');
             $table->string('nama');
             $table->string('no_kp');
+            $table->integer('id_status');
+            $table->string('pecahan');
+            $table->date('tarikh_h');
+            $table->date('tarikh_terima');
+            $table->string('rujukan_jkptg');
+            $table->string('rujukan_jps');
             $table->integer('kategori_pampasan');
         });
     }

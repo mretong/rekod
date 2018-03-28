@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlokTable extends Migration
+class CreateStatusPenerimaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateBlokTable extends Migration
      */
     public function up()
     {
-        Schema::create('blok', function (Blueprint $table) {
+        Schema::create('status_penerima', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->integer('id_fasa');
-            $table->integer('id_lokaliti');
-            $table->float('jum_lot_total',8,2);
-            $table->float('anggaran_kos',10,2);
-            $table->integer('id_pakej');
+            $table->string('kod');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +28,6 @@ class CreateBlokTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('status_penerima');
     }
 }

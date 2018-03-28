@@ -209,3 +209,10 @@ Route::resource('status_blok','StatusBlokController');
 Route::resource('carian','SearchController');
 
 Route::post('/ajax','SearchController@getNoLot')->name('ajax');
+
+/*
+|#######################################|
+|			status_penerima            #|
+|#######################################|
+*/
+Route::resource('penerima','StatusPenerimaController');

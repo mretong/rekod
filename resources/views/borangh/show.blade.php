@@ -29,6 +29,36 @@
 	</div>
 
 	<div class="form-group row">
+		{!! Form::label('penerima', 'Status Penerima', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::select('id_status', $penerima, null, ['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('pecah', 'Pecahan Bahagian', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::text('pecahan',null,['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('tarikh', 'Tarikh Tarikh Borang H', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::date('tarikh_h', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('tarikh2', 'Tarikh Terima Borang H', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::date('tarikh_terima', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('rujukan', 'Rujukan JKPTG', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::text('jkptg',null,['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('rujukan2', 'Rujukan JPS', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::text('jps',null,['class'=>'form-control col-sm-4']) !!}
+	</div>
+
+	<div class="form-group row">
 		{!! Form::label('kategori', 'Kategori Pampasan', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('kategori_pampasan', $kategori, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>

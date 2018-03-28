@@ -24,9 +24,11 @@
 
 16 <a href="{{ route('status_pembayaran.index') }}" class="btn btn-primary">Tambah Status Pembayaran</a><br><br>
 17 <a href="{{ route('kaedah_pembayaran.index') }}" class="btn btn-warning">Tambah Kaedah Pembayaran</a>
-18 <a href="{{ route('kategori.index') }}" class="btn btn-primary">Tambah Kategori Pampasan</a>
+18 <a href="{{ route('kategori.index') }}" class="btn btn-primary">Tambah Kategori Bayaran</a>
 
 19 <a href="{{ route('bank.index') }}" class="btn btn-warning">Tambah Maklumat Bank</a>
+
+20 <a href=" {{ route('penerima.index') }}" class="btn btn-primary">Tambah Status Penerima </a>
 
 <hr />
 

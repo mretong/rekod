@@ -20,7 +20,7 @@ class AduanController extends Controller
     public function create()
     {
     	$staff = Staff::pluck('nama','no_pekerja');
-    	$lot = Lot::pluck('no_lot','id');
+    	$lot = Lot::pluck('no_lot','no_hakmilik','id');
     	$sa = StatusAduan::pluck('nama','id');
         $blok = Blok::pluck('nama','id');
     	return view('aduan.create',compact('staff','lot','sa','blok'));
@@ -37,12 +37,10 @@ class AduanController extends Controller
         $aduan->id_staff        = $request->get('staff');
         $aduan->id_blok         = $request->get('id_blok');   	
     	$aduan->id_lot			= $request->get('id_lot');
-    	$aduan->no_hakmilik		= $request->get('hakmilik');
     	$aduan->nama_pengadu	= $request->get('pengadu');
     	$aduan->no_tel 			= $request->get('no_tel');
     	$aduan->catatan 		= $request->get('catatan');
     	$aduan->maklumbalas		= $request->get('maklumbalas');
-    	$aduan->pemaklum		= $request->get('pemaklum');
     	$aduan->status_aduan	= $request->get('status');
 
     	$aduan->save();
@@ -79,12 +77,10 @@ class AduanController extends Controller
     	$aduan->id_staff		= $request->get('staff');
         $aduan->id_lot          = $request->get('id_lot');
     	$aduan->id_blok			= $request->get('id_blok');
-    	$aduan->no_hakmilik		= $request->get('hakmilik');
     	$aduan->nama_pengadu	= $request->get('pengadu');
     	$aduan->no_tel 			= $request->get('no_tel');
     	$aduan->catatan 		= $request->get('catatan');
     	$aduan->maklumbalas		= $request->get('maklumbalas');
-    	$aduan->pemaklum		= $request->get('pemaklum');
     	$aduan->status_aduan	= $request->get('status');
 
     	$aduan->save();

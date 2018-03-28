@@ -7,6 +7,7 @@ use App\Pemilik;
 use App\Blok;
 use App\Lot;
 use App\KategoriPampasan;
+use App\Penerima;
 
 class BorangHController extends Controller
 {
@@ -22,9 +23,10 @@ class BorangHController extends Controller
     	$blok 	=	Blok::pluck('nama','id');
     	$lot 	=	Lot::pluck('no_lot','id');
         $kategori = KategoriPampasan::pluck('nama','id');
+        $penerima = Penerima::pluck('nama','id');
     	//dd($blok);
 
-    	return view('borangh.create',compact('blok','lot','kategori'));
+    	return view('borangh.create',compact('blok','lot','kategori','penerima'));
     }
 
     public function store(Request $request)
@@ -35,6 +37,12 @@ class BorangHController extends Controller
         $borangh->id_lot                    = $request->get('id_lot');
         $borangh->nama                      = $request->get('nama');
         $borangh->no_kp                     = $request->get('no_kp');
+        $borangh->id_status                 = $request->get('id_status');
+        $borangh->pecahan                   = $request->get('pecahan');
+        $borangh->tarikh_h                  = $request->get('tarikh_h');
+        $borangh->tarikh_terima             = $request->get('tarikh_terima');
+        $borangh->rujukan_jps               = $request->get('jps');
+        $borangh->rujukan_jkptg             = $request->get('jkptg');
         $borangh->kategori_pampasan         = $request->get('kategori_pampasan');
 
         $borangh->save();
@@ -68,6 +76,12 @@ class BorangHController extends Controller
         $borangh->id_lot                    = $request->get('id_lot');
         $borangh->nama                      = $request->get('nama');
         $borangh->no_kp                     = $request->get('no_kp');
+        $borangh->id_status                 = $request->get('id_status');
+        $borangh->pecahan                   = $request->get('pecahan');
+        $borangh->tarikh_h                  = $request->get('tarikh_h');
+        $borangh->tarikh_terima             = $request->get('tarikh_terima');
+        $borangh->rujukan_jps               = $request->get('jps');
+        $borangh->rujukan_jkptg             = $request->get('jkptg');
         $borangh->kategori_pampasan         = $request->get('kategori_pampasan');
 
         $borangh->save();

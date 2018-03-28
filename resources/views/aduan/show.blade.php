@@ -69,11 +69,6 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('pemaklum', 'Pemaklum', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::text('pemaklum',null,['class'=>'form-control col-sm-6']) !!}
-	</div>
-
-	<div class="form-group row">
 		{!! Form::label('status', 'Status Aduan', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::select('status',$sa, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
