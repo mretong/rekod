@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('mukim.create') }}">Tambah Maklumat Mukim Baru</a> ] 
+<a href="{{ route('mukim.create') }}" class="btn btn-warning"><b>Tambah Maklumat Mukim Baru</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a> 
 
 <hr />
 

@@ -59,7 +59,7 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('kategori', 'Kategori Pampasan', ['class'=>'form control col-sm-3']) !!}
+		{!! Form::label('kategori', 'Kategori Bayaran', ['class'=>'form control col-sm-3']) !!}
 		{!! Form::select('kategori_pampasan', $kategori, null, ['class'=>'form-control col-sm-4']) !!}
 	</div>
 

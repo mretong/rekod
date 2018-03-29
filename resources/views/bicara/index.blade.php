@@ -29,7 +29,8 @@
 		<td>
 				{!! Form::open(['route' => ['bicara.destroy', $hears->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}
 					{!! Form::submit('Buang', ['class' => 'btn btn-danger']) !!}	||			
-				{!! Form::close() !!}{!! Form::open(['route' => ['bicara.show', $hears->id], 'method' => 'get']) !!}
+				{!! Form::close() !!}
+				{!! Form::open(['route' => ['bicara.show', $hears->id], 'method' => 'get']) !!}
 					{!! Form::submit('Kemaskini', ['class' => 'btn btn-primary']) !!}				
 				{!! Form::close() !!}
 

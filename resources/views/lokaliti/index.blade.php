@@ -3,7 +3,8 @@
 
 <h1>Lokaliti Menu</h1>
 <hr />
-[ <a href=" {{ route('lokaliti.create') }} ">Tambah Lokaliti Baru </a> ]
+<a href=" {{ route('lokaliti.create') }} " class="btn btn-warning"><b>Tambah Lokaliti Baru</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 <hr />
 
 <table class="table table-bordered table-striped">

@@ -12,12 +12,13 @@
 
 <table class="table table-bordered table-striped">
 	<tr>
-		<td><center>Bil</td>
-		<td><center>Lot</td>
-		<td><center>Blok</td>
-		<td><center>No.KP</td>
-		<td><center>Tarikh Luput</td>
-		<td><center>Pilihan</td>
+		<td><center>Bil</center></td>
+		<td><center>Lot</center></td>
+		<td><center>Blok</center></td>
+		<td><center>No.KP</center></td>
+		<td><center>Pemilik</center></td>
+		<td><center>Tarikh Luput</center></td>
+		<td><center>Pilihan</center></td>
 	</tr>
 
 	@foreach($borangh as $form)
@@ -27,6 +28,7 @@
 		<td><center>{{ $form->blok->nama }}</td>
 		<td><center>{{ $form->no_kp }}</td>
 		<td><center>{{ $form->nama }}</td>
+		<td><center> 'under construction'  </center></td>
 		
 		<td>
 				{!! Form::open(['route' => ['borangh.destroy', $form->id], 'method' => 'delete', 'onclick'=>'return myFunction();']) !!}

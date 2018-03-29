@@ -10,22 +10,22 @@
 	
 	<div class="form-group row">
 		{!! Form::label('daerah', 'Daerah',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_daerah', $daerah, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_daerah', $daerah, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('mukim', 'Mukim',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_mukim', $mukim, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_mukim', $mukim, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_blok', $blok, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_blok', $blok, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('lot', 'Lot',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_lot', $lot, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_lot', $lot, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -35,12 +35,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('nama', 'Nama Pentadbir',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_staff', $staff, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('id_staff', $staff, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('status', 'Status Perbicaraan',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('status', $sb, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('status', $sb, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -75,12 +75,12 @@
 
 	<div class="form-group row">
 		{!! Form::label('mada', 'Wakil MADA',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('wakil_mada', $staff, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('wakil_mada', $staff, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">
 		{!! Form::label('jps', 'Wakil JPS',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('wakil_jps', $staff, null, ['class'=>'form-control col-sm-6']) !!}
+		{!! Form::select('wakil_jps', $staff, null, ['class'=>'form-control col-sm-6','placeholder'=>'Sila Pilih']) !!}
 	</div>
 
 	<div class="form-group row">

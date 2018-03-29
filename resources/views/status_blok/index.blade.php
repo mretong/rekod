@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('status_blok.create') }}">Tambah Maklumat Status Blok Baru</a> ] 
+<a href="{{ route('status_blok.create') }}" class="btn btn-warning"><b>Tambah Maklumat Status Blok Baru</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 
 <hr />
 

@@ -7,6 +7,16 @@
 <hr />
 
 {!! Form::model($hears, ['route' => ['bicara.update', $hears->id], 'method' => 'PATCH']) !!}
+	
+	<div class="form-group row">
+		{!! Form::label('daerah', 'Daerah',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_daerah', $daerah, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('mukim', 'Mukim',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('id_mukim', $mukim, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
 
 	<div class="form-group row">
 		{!! Form::label('blok', 'Blok',['class'=>'form control col-sm-2']) !!}
@@ -34,8 +44,23 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('bilangan', 'Bilangan', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::label('bilangan', 'Bil. Perbicaraan', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('bilangan',null,['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('luas', 'Luas Diambil(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('luas_ambil',null,['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('price', 'Harga/(Ha)', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('harga',null,['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('bil_tuan', 'Bil. Tuan Tanah', ['class'=>'form control col-sm-2']) !!}
+		{!! Form::text('tuan_tanah',null,['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">
@@ -46,6 +71,16 @@
 	<div class="form-group row">
 		{!! Form::label('kosLain', 'Lain-lain Kos RM:', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::text('kos_lain',null,['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('mada', 'Wakil MADA',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('wakil_mada', $staff, null, ['class'=>'form-control col-sm-6']) !!}
+	</div>
+
+	<div class="form-group row">
+		{!! Form::label('jps', 'Wakil JPS',['class'=>'form control col-sm-2']) !!}
+		{!! Form::select('wakil_jps', $staff, null, ['class'=>'form-control col-sm-6']) !!}
 	</div>
 
 	<div class="form-group row">

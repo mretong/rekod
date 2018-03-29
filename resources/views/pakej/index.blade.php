@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('pakej.create') }}">Tambah Maklumat Pakej Baru</a> ] 
+<a href="{{ route('pakej.create') }}" class="btn btn-warning"><b>Tambah Maklumat Pakej Baru</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 
 <hr />
 

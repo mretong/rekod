@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('negeri.create') }}">Tambah Maklumat Negeri Baru</a> ] 
+<a href="{{ route('negeri.create') }}" class="btn btn-warning"><b>Tambah Maklumat Negeri</b></a>&nbsp;&nbsp;
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 
 <hr />
 

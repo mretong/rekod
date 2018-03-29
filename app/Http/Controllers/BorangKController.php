@@ -29,7 +29,9 @@ class BorangKController extends Controller
     	$borangk->id_blok		=	$request->get('id_blok');
     	$borangk->id_lot		=	$request->get('id_lot');
     	$borangk->tarikh_k		=	$request->get('tarikh_k');
-    	$borangk->rujukan_k		=	$request->get('rujukan_k');
+        $borangk->tarikh_terima =   $request->get('tarikh_terima');
+    	$borangk->rujukan_jkptg	=	$request->get('jkptg');
+        $borangk->rujukan_jps   =   $request->get('jps');
     	$borangk->rujukan_fail	=	$request->get('rujukan_fail');
     	$borangk->attachment 	=	$request->get('attachment');
 
@@ -59,12 +61,14 @@ class BorangKController extends Controller
     {
     	$borangk = BorangK::find($id);
 
-    	$borangk->id_blok 		= 	$request->get('id_blok');
-    	$borangk->id_lot		= 	$request->get('id_lot');
-    	$borangk->tarikh_k 		=	$request->get('tarikh_k');
-    	$borangk->rujukan_k		= 	$request->get('rujukan_k');
-    	$borangk->rujukan_fail 	= 	$request->get('rujukan_fail');
-    	$borangk->attachment 	= 	$request->get('attachment');
+    	$borangk->id_blok      =   $request->get('id_blok');
+        $borangk->id_lot        =   $request->get('id_lot');
+        $borangk->tarikh_k      =   $request->get('tarikh_k');
+        $borangk->tarikh_terima =   $request->get('tarikh_terima');
+        $borangk->rujukan_jkptg =   $request->get('rujukan_jkptg');
+        $borangk->rujukan_jps   =   $request->get('rujukan_jps');
+        $borangk->rujukan_fail  =   $request->get('rujukan_fail');
+        $borangk->attachment    =   $request->get('attachment');
 
     	$borangk->save();
 
