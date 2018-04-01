@@ -20,7 +20,7 @@ class BlokController extends Controller
     public function create()
     {
         $lokaliti = Lokaliti::pluck('nama','id');
-        $fasa = Fasa::pluck('nama','kod');
+        $fasa = Fasa::pluck('nama','id');
         $pakej = Pakej::pluck('nama','kod');
         return view('blok.create',compact('fasa','lokaliti','pakej'));
     }

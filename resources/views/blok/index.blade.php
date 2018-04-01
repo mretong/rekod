@@ -7,7 +7,7 @@
 
 <hr />
 
-[ <a href="{{ route('blok.create') }}">Tambah Maklumat Blok Pengairan Baru</a> ] 
+<a href="{{ route('blok.create') }}" class="btn btn-warning" style=""><b>Tambah Blok Pengairan</b></a>
 
 <hr />
 
@@ -24,7 +24,7 @@
 	<tr>
 		<td><center>{{ $loop->iteration }}</td>
 		<td><center>{{ $tersier->nama }}</td>
-		<td><center>{{ $tersier->id_fasa }}</td>
+		<td><center>{{ $tersier->fasa->nama }}</td>
 		<td><center>{{ $tersier->lokaliti->nama }}</td>
 		
 		<td><center>
