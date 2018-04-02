@@ -7,7 +7,9 @@
 
 <hr />
 
-[ <a href="{{ route('lot.create') }}">Tambah Maklumat Lot Baru</a> ] 
+<a href="{{ route('lot.create') }}" class="btn btn-warning"><b>Tambah Maklumat Lot Baru</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
+
 
 <hr />
 

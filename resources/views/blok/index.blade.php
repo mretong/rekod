@@ -8,6 +8,7 @@
 <hr />
 
 <a href="{{ route('blok.create') }}" class="btn btn-warning" style=""><b>Tambah Blok Pengairan</b></a>
+<a href="{{ route('setting.index') }}" class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 
 <hr />
 

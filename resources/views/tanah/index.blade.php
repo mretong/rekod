@@ -7,7 +7,8 @@
 
 <hr />
 
-[ <a href="{{ route('tanah.create') }}">Tambah Maklumat Status Tanah Baru</a> ] 
+<a href="{{ route('tanah.create') }}" class="btn btn-warning"><b>Tambah Maklumat Status Tanah Baru</b></a>
+<a href=" {{ route('setting.index') }} " class="btn btn-warning" style="float: right;"><b>Menu Utama</b></a>
 
 <hr />
 
