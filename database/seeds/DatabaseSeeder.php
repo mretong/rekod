@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DaerahTableSeeder::class);
         $this->call(PakejTableSeeder::class);
         $this->call(FasaTableSeeder::class);
+        $this->call(PtjTableSeeder::class);
         //$this->call(MukimTableSeeder::class);
     }
 }
