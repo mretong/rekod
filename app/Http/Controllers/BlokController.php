@@ -21,8 +21,7 @@ class BlokController extends Controller
     {
         $lokaliti = Lokaliti::pluck('nama','id');
         $fasa = Fasa::pluck('nama','id');
-        $pakej = Pakej::pluck('nama','kod');
-        return view('blok.create',compact('fasa','lokaliti','pakej'));
+        return view('blok.create',compact('fasa','lokaliti'));
     }
 
     public function store(Request $request)
@@ -34,7 +33,6 @@ class BlokController extends Controller
         $blok->anggaran_kos     = $request->get('anggaran_kos');
     	$blok->id_lokaliti		= $request->get('id_lokaliti');
     	$blok->id_fasa	        = $request->get('fasa');
-        $blok->id_pakej         = $request->get('id_pakej');
 
     	$blok->save();
 
@@ -66,7 +64,6 @@ class BlokController extends Controller
         $blok->anggaran_kos     = $request->get('anggaran_kos');
         $blok->id_lokaliti      = $request->get('id_lokaliti');
         $blok->id_fasa          = $request->get('fasa');
-        $blok->id_pakej         = $request->get('id_pakej');
 
         $blok->save();
 

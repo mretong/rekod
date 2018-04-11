@@ -8,7 +8,7 @@ class Blok extends Model
 {
     protected $table = 'blok';
     protected $primaryKey = 'id';
-    protected $fillable = ['nama','id_lokaliti','jum_lot_total','anggaran_kos','status_batal','id_fasa','rujukan_jkptg','rujukan_jps'];
+    protected $fillable = ['nama','id_lokaliti','jum_lot_total','anggaran_kos','id_fasa'];
     public $timestamps = false;
 
     public function pembayaran()

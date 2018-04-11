@@ -20,7 +20,6 @@ class CreateBlokTable extends Migration
             $table->integer('id_lokaliti');
             $table->float('jum_lot_total',8,2);
             $table->float('anggaran_kos',10,2);
-            $table->integer('id_pakej');
         });
     }
 

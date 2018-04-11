@@ -28,17 +28,17 @@ class PtjTableSeeder extends Seeder
         ]);
 
         Ptj::create([
-        	'nama' 	=>	'Jabatan Pengairan Dan Saliran MUDA'
+        	'nama' 	=>	'Jabatan Pengairan Dan Saliran MUDA',
         	'kod'	=>	'JPS(MUDA)'
         ]);
 
         Ptj::create([
-        	'nama'	=>	'Jabatan Ketua Pengarah Tanah dan Galian'
+        	'nama'	=>	'Jabatan Ketua Pengarah Tanah dan Galian',
         	'kod'	=>	'JKPTG(Kedah)'
         ]);
 
         Ptj::create([
-        	'nama' => 	'Jabatan Ketua Pengarah Tanah dan Galian'
+        	'nama' => 	'Jabatan Ketua Pengarah Tanah dan Galian',
         	'kod'  => 	'JKPTG(Perlis)'
         ]);
     }

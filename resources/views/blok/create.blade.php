@@ -33,11 +33,6 @@
 		{!! Form::select('fasa', $fasa, 'Sila Pilih', ['class'=>'form-control col-sm-5']) !!}
 	</div>
 
-	<div class="form-group row">
-		{!! Form::label('pakej', 'Fasa Pengambilan',['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('id_pakej', $pakej, 'Sila Pilih', ['class'=>'form-control col-sm-5']) !!}
-	</div>
-
 	<div class="form-group">
 		{!! Form::submit('Tambah', ['class' => 'btn btn-primary','onclick'=>'return myFunction();']) !!}
 		&nbsp <a href="{{ route('blok.index') }}" class="btn btn-info">Kembali</a>
