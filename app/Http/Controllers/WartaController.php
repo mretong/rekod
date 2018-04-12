@@ -12,7 +12,6 @@ use Redirect;
 use App\Warta;
 use App\Blok;
 use App\Fasa;
-use App\Pakej;
 use App\Mukim;
 
 use Carbon\Carbon;
@@ -29,12 +28,11 @@ class WartaController extends Controller
     {
     	$blok  = Blok::pluck('nama', 'id');
         $fasa  = Fasa::pluck('nama','id');
-        $pakej = Pakej::pluck('nama','id');
         $mukim = Mukim::pluck('nama','id');
 
          //dd('here');
 
-    	return view('warta.create',compact('blok','fasa','pakej','mukim'));
+    	return view('warta.create',compact('blok','fasa','mukim'));
     }
 
     public function store(Request $request)
@@ -108,7 +106,6 @@ class WartaController extends Controller
         $warta = new Warta;
 
         $warta->id_blok         =   $request->get('blok');
-        $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
         $warta->tarikh_luput    =   $request->get('tarikh_luput');
         $warta->jilid_warta     =   $request->get('jilid');
@@ -135,9 +132,8 @@ class WartaController extends Controller
         $news = Warta::findOrFail($id);
         $blok = Blok::pluck('nama', 'id');
         $fasa = Fasa::pluck('nama','id');
-        $pakej = Pakej::pluck('nama','id');
 
-        return view('warta.show', compact('news', 'blok', 'fasa', 'pakej'));
+        return view('warta.show', compact('news', 'blok', 'fasa'));
     }
 
     public function update($id, Request $request)
@@ -147,7 +143,6 @@ class WartaController extends Controller
         $warta = Warta::find($id);
 
         $warta->id_blok         =   $request->get('blok');
-        $warta->id_pakej        =   $request->get('pakej');
         $warta->tarikh_warta    =   $request->get('tarikh_warta');
         $warta->tarikh_luput    =   $request->get('tarikh_luput');
         $warta->jilid_warta     =   $request->get('jilid');

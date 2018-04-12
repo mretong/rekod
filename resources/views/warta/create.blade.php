@@ -19,11 +19,6 @@
 	</div>
 
 	<div class="form-group row">
-		{!! Form::label('pakej', 'Pakej', ['class'=>'form control col-sm-2']) !!}
-		{!! Form::select('pakej',$pakej, null, ['class'=>'form-control col-sm-6', 'placeholder'=>'Sila Pilih']) !!}
-	</div>
-
-	<div class="form-group row">
 		{!! Form::label('tarikh_warta', 'Tarikh Warta', ['class'=>'form control col-sm-2']) !!}
 		{!! Form::date('tarikh_warta', \Carbon\Carbon::now(), ['class'=>'form-control col-sm-6']) !!}
 	</div>

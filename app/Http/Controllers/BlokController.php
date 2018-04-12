@@ -51,7 +51,7 @@ class BlokController extends Controller
     {
     	$tersier = Blok::findOrFail($id);
         $lokaliti = Lokaliti::pluck('nama','id');
-        $fasa = Fasa::pluck('nama','kod');
+        $fasa = Fasa::pluck('nama','id');
         return view('blok.show', compact('tersier','lokaliti','fasa'));
     }
 
